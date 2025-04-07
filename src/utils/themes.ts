@@ -17,23 +17,29 @@ export const localFontSize = {
     md: "44px",
     lg: "48px",
   },
+
   h3: {
+    xs: "26px",
+    sm: "28px",
+    md: "32px",
+    lg: "36px",
+  },
+
+  h4: {
     xs: "24px",
     sm: "26px",
     md: "28px",
     lg: "32px",
   },
 
-  h4: {
-    xs: "18px",
-    sm: "22px",
-    md: "26px",
-    lg: "28px",
+  h5: {
+    xs: "20px",
+    md: "22px",
+    lg: "24px",
   },
+
   // textual
-  p1: { xs: "18px", md: "22px", lg: "24px" },
-  p2: { xs: "14px", md: "16px", lg: "18px" },
-  p3: { xs: "14px", lg: "16px" },
-  p4: { xs: "12px", lg: "14px" },
-  p5: "12px",
+  p1: { xs: "14px", md: "16px", lg: "18px" },
+  p2: { xs: "14px", lg: "16px" },
+  p5: "10px",
 };
