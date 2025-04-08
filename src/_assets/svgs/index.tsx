@@ -3,6 +3,7 @@ import hamburger from "./hamburger.svg";
 import cross from "./cross.svg";
 import star from "./star.svg";
 import halfStar from "./halfStar.svg";
+import arrow from "./arrow.svg";
 
 const svgs = {
   logoWhite,
@@ -10,6 +11,7 @@ const svgs = {
   cross,
   star,
   halfStar,
+  arrow,
 };
 
 export default svgs;

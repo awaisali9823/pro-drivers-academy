@@ -13,7 +13,7 @@ export default function StatsBanner() {
     <Box
       sx={{
         padding: {
-          xs: "30px",
+          xs: "30px 20px",
           sm: "40px 40px",
           md: "40px 60px",
           lg: "60px 100px",
@@ -30,7 +30,7 @@ export default function StatsBanner() {
           columnGap: "30px",
           flexWrap: "wrap",
           flexDirection: { xs: "column", sm: "row" },
-          maxWidth: "1536px",
+          maxWidth: "1200px",
           margin: "auto",
         }}
       >

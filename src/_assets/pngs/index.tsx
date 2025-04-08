@@ -14,6 +14,8 @@ import image9 from "./image9.png";
 import image10 from "./image10.png";
 import image11 from "./image11.png";
 import image12 from "./image12.png";
+import autoAndManual from "./popularCourses/autoAndManual.png";
+import theoryTest from "./popularCourses/theoryTest.png";
 const pngs = {
   heroHome,
   storycardImage1,
@@ -31,6 +33,8 @@ const pngs = {
   image10,
   image11,
   image12,
+  autoAndManual,
+  theoryTest,
 };
 
 export default pngs;
