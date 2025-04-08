@@ -1,5 +1,5 @@
 import Navbar from "@/_components/Navbar";
-import Hero from "./_sections/Hero";
+import Hero from "../../_components/Hero";
 import Journey from "./_sections/Journey";
 import Instructor from "../../_assets/pngs/instructor.png";
 import City from "../../_assets/pngs/city.png";
