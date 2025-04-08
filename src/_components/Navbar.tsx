@@ -35,7 +35,13 @@ export default function Navbar() {
           }}
         >
           {/* logo box  */}
-          <Box sx={{ maxWidth: { xs: "112px ", xl: "140px" }, width: "100%" }}>
+          <Box
+            sx={{
+              maxWidth: { xs: "112px ", xl: "140px" },
+              width: "100%",
+              cursor: "pointer",
+            }}
+          >
             <Image
               style={{ height: "100%", width: "100%", objectFit: "contain" }}
               src={svgs.logoWhite}
@@ -66,7 +72,7 @@ export default function Navbar() {
             <Typography>Review</Typography>
           </Box>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <CustomButton />
+            <CustomButton btnText="Contact Us" />
           </Box>
           <Box
             onClick={() => toggleDrawer(true)}
@@ -156,7 +162,7 @@ export default function Navbar() {
           <Box
             sx={{ margin: "auto", width: "fit-content", paddingTop: "10px" }}
           >
-            <CustomButton />
+            <CustomButton btnText="Contact Us" />
           </Box>
         </Box>
       </Box>
