@@ -1,12 +1,14 @@
 "use client";
 import { localFontSize } from "@/utils/themes";
-import { Button } from "@mui/material";
+import { Button, SxProps, Theme } from "@mui/material";
 
 type CustomButtonProps = {
   onClick?: () => void;
+  btnText: string;
+  sx?: SxProps<Theme>;
 };
 
-function CustomButton({ onClick = () => {} }: CustomButtonProps) {
+function CustomButton({ onClick = () => {}, btnText, sx }: CustomButtonProps) {
   return (
     <Button
       variant="outlined"
@@ -23,9 +25,10 @@ function CustomButton({ onClick = () => {} }: CustomButtonProps) {
           borderColor: "#FF0000",
           backgroundColor: "rgba(255, 0, 0, 0.04)",
         },
+        ...sx,
       }}
     >
-      Contact Us
+      {btnText}
     </Button>
   );
 }
