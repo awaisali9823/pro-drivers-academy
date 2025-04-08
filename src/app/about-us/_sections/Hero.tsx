@@ -1,20 +1,29 @@
 import { Box, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 
-export default function Hero() {
+type HeroProps = {
+  backgroundImage: string;
+  heading: string;
+  description: string;
+};
+
+export default function Hero({
+  backgroundImage,
+  heading,
+  description,
+}: HeroProps) {
   return (
     <Box
       sx={{
-        backgroundImage: `url("/road.png")`,
+        backgroundImage: `url(./${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: {
           xs: "20px",
-          sm: "20px 60px",
-          md: "20px 80px",
+          sm: "20px 40px",
+          md: "20px 60px",
           lg: "20px 100px",
         },
-        // height: "420px",
       }}
     >
       <Box
@@ -40,7 +49,7 @@ export default function Hero() {
             textAlign: "center",
           }}
         >
-          Your Journey Starts Here
+          {heading}
         </Typography>
         <Typography
           sx={{
@@ -53,8 +62,7 @@ export default function Hero() {
             margin: "auto",
           }}
         >
-          Join Pro Drive Academy, the UK’s trusted driving school, and gain the
-          skills you need to drive safely and pass your test with ease.
+          {description}
         </Typography>
       </Box>
     </Box>
