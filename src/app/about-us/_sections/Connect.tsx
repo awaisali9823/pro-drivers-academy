@@ -10,8 +10,8 @@ export default function Connect() {
     <Box
       sx={{
         padding: {
-          xs: "20px",
-          sm: "20px 40px",
+          xs: "20px 20px",
+          sm: "40px 40px",
           md: "50px 60px",
           lg: "80px 100px",
         },
@@ -42,7 +42,7 @@ export default function Connect() {
               margin: "auto",
             }}
           >
-            Let&apos;s Connect – We&apos;re Here to Help!
+            Let&apos;s Connect – <br /> We&apos;re Here to Help!
           </Typography>
           <Typography
             sx={{
@@ -64,6 +64,7 @@ export default function Connect() {
             flexDirection: { xs: "column", md: "row" },
             gap: { xs: "20px", md: "40px" },
             justifyContent: { xs: "center", xl: "space-between" },
+            alignItems: { xs: "center", md: "initial" },
             marginTop: { xs: "40px", md: "80px" },
           }}
         >

@@ -24,6 +24,10 @@ export default function Hero({
           md: "20px 60px",
           lg: "20px 100px",
         },
+        height: "420px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Box
@@ -34,7 +38,7 @@ export default function Hero({
           background: "rgba(25, 34, 39, 0.4)",
           backdropFilter: "blur(11.25px)",
           WebkitBackdropFilter: "blur(11.25px)",
-          margin: "50px auto",
+          // margin: "40px auto",
           borderRadius: "45px",
         }}
       >
@@ -47,6 +51,11 @@ export default function Hero({
             width: "100%",
             margin: "auto",
             textAlign: "center",
+            display: "-webkit-box",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
           }}
         >
           {heading}
@@ -60,6 +69,11 @@ export default function Hero({
             maxWidth: "900px",
             width: "100%",
             margin: "auto",
+            display: "-webkit-box",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
           }}
         >
           {description}

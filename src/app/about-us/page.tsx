@@ -4,6 +4,7 @@ import Journey from "./_sections/Journey";
 import Instructor from "../../_assets/pngs/instructor.png";
 import City from "../../_assets/pngs/city.png";
 import Connect from "./_sections/Connect";
+import FAQ from "./_sections/FAQ";
 
 export default function page() {
   return (
@@ -30,6 +31,7 @@ export default function page() {
         align="left"
         alt="City"
       />
+      <FAQ />
       <Connect />
     </>
   );

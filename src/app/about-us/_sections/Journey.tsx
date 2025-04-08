@@ -24,9 +24,9 @@ export default function Journey({
     <Box
       sx={{
         padding: {
-          xs: align == "right" ? "30px 20px" : "0px 20px",
-          sm: align == "right" ? "40px 40px" : "0px 40px",
-          md: align == "right" ? "40px 60px" : "0px 60px",
+          xs: align == "right" ? "40px 20px" : "0px 20px",
+          sm: align == "right" ? "60px 40px" : "0px 40px",
+          md: align == "right" ? "80px 60px" : "0px 60px",
           lg: align == "right" ? "100px 100px" : "0px 100px",
         },
       }}
@@ -38,7 +38,10 @@ export default function Journey({
           margin: "auto",
           display: "flex",
           flexDirection: { xs: "column", md: direction },
-          alignItems: "center",
+          alignItems: {
+            xs: align == "right" ? "flex-end" : "flex-start",
+            md: "center",
+          },
           justifyContent: "space-between",
           gap: { xs: "20px", md: "10px" },
         }}
