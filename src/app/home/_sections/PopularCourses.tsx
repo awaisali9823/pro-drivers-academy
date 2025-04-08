@@ -16,7 +16,7 @@ export default function PopularCourses() {
         },
       }}
     >
-      <Box sx={{ maxWidth: "1526px", margin: "auto" }}>
+      <Box sx={{ maxWidth: "1536px", margin: "auto" }}>
         <Box
           sx={{
             textAlign: "center",

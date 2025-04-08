@@ -1,8 +1,4 @@
 // import { localFontSize } from "@/app/utils/themes";
-export const localColors = {
-  sideColor: "#111111",
-};
-
 export const localFontSize = {
   // headings
   h1: {
