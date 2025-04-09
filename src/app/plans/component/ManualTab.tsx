@@ -83,7 +83,7 @@ export default function Manualtab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 300, sm: 380, md: 300, xl: "400px" },
+                maxWidth: { xs: 420, sm: 380, md: 300, xl: "400px" },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}

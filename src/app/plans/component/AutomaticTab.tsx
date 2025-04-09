@@ -65,8 +65,7 @@ export default function AutomaticTab() {
     <Box
       sx={{
         py: 9,
-        // px: { xs: 1, md: 2 },
-        // border: "1px solid black",
+
         maxWidth: { lg: "880px", xl: "1536px" },
         width: "100%",
         margin: "auto",
@@ -86,7 +85,6 @@ export default function AutomaticTab() {
 
           return (
             <Grid
-              
               size={{ xs: 12, sm: 6, md: 4 }}
               key={index}
               sx={{
