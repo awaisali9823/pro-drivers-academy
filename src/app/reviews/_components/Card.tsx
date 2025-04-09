@@ -16,7 +16,7 @@ export default function Card({ imgSrc, name, desc }: ReviewProps) {
       <Box
         sx={{
           background: "rgba(25,34,39,1)",
-          maxWidth: { xs: "600px", xl: "700px" },
+          maxWidth: { xs: "600px", xl: "745px" },
           width: "100%",
           borderRadius: "22px",
           padding: "30px",
