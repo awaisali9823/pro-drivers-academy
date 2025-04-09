@@ -54,8 +54,7 @@ export default function Manualtab() {
     <Box
       sx={{
         py: 9,
-        // px: { xs: 1, md: 2 },
-        // border: "1px solid black",
+
         maxWidth: "1536px",
         width: "100%",
         margin: "auto",
@@ -63,6 +62,7 @@ export default function Manualtab() {
       <Grid
         container
         spacing={3}
+        rowSpacing={10}
         justifyContent="space-between"
         alignItems="center"
         sx={{
@@ -71,6 +71,7 @@ export default function Manualtab() {
             xs: "center",
             md: "space-evenly",
             lg: "space-around",
+            xl: "space-around",
           },
           alignItems: "center",
         }}>
@@ -83,7 +84,7 @@ export default function Manualtab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 300, sm: 380, md: 400, xl: "440px" },
+                maxWidth: { xs: 300, sm: 380, md: 400, xl: "400px" },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}

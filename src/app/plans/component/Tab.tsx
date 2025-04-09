@@ -26,17 +26,17 @@ function LegalServicesTabs() {
   return (
     <Box
       sx={{
-        // maxWidth: "1536px",
+        maxWidth: { lg: "1320px", xl: "1536px" },
         width: "100%",
         margin: "auto",
-        // bgcolor: "#ccc",
+
         background: "#ffffff",
       }}>
       <Box
         sx={{
-          // maxWidth: "1536px",
-          // width: "100%",
-          // margin: "auto",
+          maxWidth: "1536px",
+          width: "100%",
+
           textAlign: "center",
         }}>
         <ToggleButtonGroup
