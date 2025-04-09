@@ -16,6 +16,12 @@ import image11 from "./image11.png";
 import image12 from "./image12.png";
 import autoAndManual from "./popularCourses/autoAndManual.png";
 import theoryTest from "./popularCourses/theoryTest.png";
+import lexi from "./lexi.png";
+import chloe from "./chloe.png";
+import monica from "./monica.png";
+import jordie from "./jordie.png";
+import millie from "./millie.png";
+import jai from "./jai.png";
 const pngs = {
   heroHome,
   storycardImage1,
@@ -35,6 +41,12 @@ const pngs = {
   image12,
   autoAndManual,
   theoryTest,
+  lexi,
+  chloe,
+  jordie,
+  monica,
+  jai,
+  millie,
 };
 
 export default pngs;
