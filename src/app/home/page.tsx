@@ -3,6 +3,7 @@ import HeroHome from "./_sections/HeroHome";
 import StatsBanner from "./_sections/StatsBanner";
 import PopularCourses from "./_sections/PopularCourses";
 import NewLocation from "./_sections/NewLocation";
+import ContactUs from "@/_components/ContactUs";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <StatsBanner />
       <PopularCourses />
       <NewLocation />
+      <ContactUs />
     </>
   );
 }
