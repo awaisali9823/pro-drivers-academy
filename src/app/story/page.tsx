@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 import Image from "next/image";
 import pngs from "@/_assets/pngs/index";
+import Navbar from "@/_components/Navbar";
 
 export default function Story() {
   const CardData = [
@@ -20,6 +21,7 @@ export default function Story() {
   ];
   return (
     <>
+      <Navbar />
       <Box
         sx={{
           margin: "auto",
