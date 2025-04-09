@@ -12,6 +12,16 @@ export default function Navbar() {
     setIsDrawerOpen(open);
   };
 
+  const navLinks = [
+    "Home",
+    "About",
+    "Areas",
+    "Plans",
+    "Story",
+    "Gallery",
+    "Review",
+  ];
+
   return (
     <>
       <Box
@@ -35,7 +45,13 @@ export default function Navbar() {
           }}
         >
           {/* logo box  */}
-          <Box sx={{ maxWidth: { xs: "112px ", xl: "140px" }, width: "100%" }}>
+          <Box
+            sx={{
+              maxWidth: { xs: "112px ", xl: "140px" },
+              width: "100%",
+              cursor: "pointer",
+            }}
+          >
             <Image
               style={{ height: "100%", width: "100%", objectFit: "contain" }}
               src={svgs.logoWhite}
@@ -57,16 +73,12 @@ export default function Navbar() {
               },
             }}
           >
-            <Typography>Home</Typography>
-            <Typography>About</Typography>
-            <Typography>Areas</Typography>
-            <Typography>Plans</Typography>
-            <Typography>Story</Typography>
-            <Typography>Gallery</Typography>
-            <Typography>Review</Typography>
+            {navLinks.map((text, index) => (
+              <Typography key={index}>{text}</Typography>
+            ))}
           </Box>
           <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <CustomButton />
+            <CustomButton btnText="Contact Us" />
           </Box>
           <Box
             onClick={() => toggleDrawer(true)}
@@ -139,28 +151,19 @@ export default function Navbar() {
             },
           }}
         >
-          <Typography>Home</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>About</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>Areas</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>Plans</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>Story</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>Gallery</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
-          <Typography>Review</Typography>
-          <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
+          {navLinks.map((link, i) => (
+            <React.Fragment key={i}>
+              <Typography>{link}</Typography>
+              <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
+            </React.Fragment>
+          ))}
           <Box
             sx={{ margin: "auto", width: "fit-content", paddingTop: "10px" }}
           >
-            <CustomButton />
+            <CustomButton btnText="Contact Us" />
           </Box>
         </Box>
       </Box>
-
       {/* Backdrop */}
       {isDrawerOpen && (
         <Box
