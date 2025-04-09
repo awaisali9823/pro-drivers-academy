@@ -21,7 +21,7 @@ export default function HomePage() {
         sx={{
           maxWidth: "1536px",
           margin: "auto",
-          alignItems: "center",
+          alignItems: "flex-start",
           rowGap: "30px",
         }}
         container

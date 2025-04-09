@@ -3,6 +3,8 @@ import { localFontSize } from "@/utils/themes";
 import Image from "next/image";
 import pngs from "@/_assets/pngs/index";
 import Navbar from "@/_components/Navbar";
+import Hero from "../../_components/Hero";
+import Footer from "@/_components/Footer";
 
 export default function Story() {
   const CardData = [
@@ -22,6 +24,11 @@ export default function Story() {
   return (
     <>
       <Navbar />
+      <Hero
+        backgroundImage="bgPlans.png"
+        heading="Driving Lessons That Fit Your Life"
+        description="Explore our flexible plans designed for new drivers, busy schedules, and fast-track learners. Start when you're ready, learn at your speed."
+      />
       <Box
         sx={{
           width: "100%",
@@ -32,7 +39,8 @@ export default function Story() {
             md: "20px 60px",
             lg: "30px 100px",
           },
-        }}>
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -40,7 +48,8 @@ export default function Story() {
             height: "auto",
             width: "100%",
             fontFamily: "Poppins",
-          }}>
+          }}
+        >
           <Box
             sx={{
               maxwidth: { xs: 361, sm: 600, md: "1536px" },
@@ -49,7 +58,8 @@ export default function Story() {
               justifyContent: "center",
               alignItems: "center",
               gap: 8,
-            }}>
+            }}
+          >
             <Box
               sx={{
                 maxWidth: { xs: 361, sm: 600, md: "808px" },
@@ -59,7 +69,8 @@ export default function Story() {
                 alignItems: "center",
                 fontFamily: "Poppins",
                 gap: 5,
-              }}>
+              }}
+            >
               <Typography
                 sx={{
                   maxWidth: { xs: 361, md: "526px" },
@@ -71,7 +82,8 @@ export default function Story() {
                   textAlign: "center",
                   textTransform: "capitalize",
                   color: "#192227",
-                }}>
+                }}
+              >
                 Real journey, real success!
               </Typography>
               <Typography
@@ -84,13 +96,13 @@ export default function Story() {
                   letterSpacing: "0%",
                   textAlign: "center",
                   color: "#19222780",
-                }}>
+                }}
+              >
                 Take the first step towards driving independence with expert
                 guidance and hands-on training. At Pro Drive Academy, we turn
                 learners into confident, skilled drivers.
               </Typography>
             </Box>
-            {/* ------------------------------------------------------ */}
             <Box
               sx={{
                 width: "100%",
@@ -105,7 +117,8 @@ export default function Story() {
                 },
                 alignItems: "start",
                 gap: 4,
-              }}>
+              }}
+            >
               {CardData.map((items, index) => {
                 return (
                   <div key={index}>
@@ -125,7 +138,8 @@ export default function Story() {
                         justifyContent: "center",
                         alignItems: "start",
                         gap: 3,
-                      }}>
+                      }}
+                    >
                       <Image
                         src={items.image}
                         alt="Story card"
@@ -156,7 +170,8 @@ export default function Story() {
                             md: "start",
                           },
                           gap: 3,
-                        }}>
+                        }}
+                      >
                         {" "}
                         <Typography
                           sx={{
@@ -166,7 +181,8 @@ export default function Story() {
                             wordSpacing: "2px",
 
                             color: "#192227",
-                          }}>
+                          }}
+                        >
                           {items.heading}
                         </Typography>
                         <Typography
@@ -179,7 +195,8 @@ export default function Story() {
                             letterSpacing: "0%",
 
                             color: "#19222780",
-                          }}>
+                          }}
+                        >
                           ANOTHER 1st TIME PASS!!! 2nd PASS OF THE WEEK!!!
                           MASSIVE Congrats And Well Done to Afsah in passing
                           your Driving Test today with Instructor Ryla!
@@ -193,6 +210,7 @@ export default function Story() {
           </Box>
         </Box>
       </Box>
+      <Footer />
     </>
   );
 }

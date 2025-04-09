@@ -3,8 +3,9 @@ import Hero from "../../_components/Hero";
 import Journey from "./_sections/Journey";
 import Instructor from "../../_assets/pngs/instructor.png";
 import City from "../../_assets/pngs/city.png";
-import Connect from "./_sections/Connect";
 import FAQ from "./_sections/FAQ";
+import ContactUs from "@/_components/ContactUs";
+import Footer from "@/_components/Footer";
 
 export default function page() {
   return (
@@ -32,7 +33,8 @@ export default function page() {
         alt="City"
       />
       <FAQ />
-      <Connect />
+      <ContactUs />
+      <Footer />
     </>
   );
 }

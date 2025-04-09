@@ -4,6 +4,7 @@ import StatsBanner from "./_sections/StatsBanner";
 import PopularCourses from "./_sections/PopularCourses";
 import NewLocation from "./_sections/NewLocation";
 import ContactUs from "@/_components/ContactUs";
+import Footer from "@/_components/Footer";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <PopularCourses />
       <NewLocation />
       <ContactUs />
+      <Footer />
     </>
   );
 }

@@ -1,17 +1,26 @@
 import { Box } from "@mui/material";
+import Hero from "../../_components/Hero";
 import Tab from "./component/Tab";
 import Navbar from "@/_components/Navbar";
+import ContactUs from "@/_components/ContactUs";
+import Footer from "@/_components/Footer";
 
 export default function Plans() {
   return (
     <>
       <Navbar />
+      <Hero
+        backgroundImage="bgPlans.png"
+        heading="Driving Lessons That Fit Your Life"
+        description="Explore our flexible plans designed for new drivers, busy schedules, and fast-track learners. Start when you're ready, learn at your speed."
+      />
       <Box
         sx={{
           width: "100%",
           margin: "auto",
           padding: { xl: "20px 100px" },
-        }}>
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -26,7 +35,8 @@ export default function Plans() {
               lg: "20px 100px",
               xl: "30px 0px ",
             },
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: "100%",
@@ -36,11 +46,14 @@ export default function Plans() {
               justifyContent: "center",
               alignItems: "center",
               // bgcolor: "#ccc",
-            }}>
+            }}
+          >
             <Tab />
           </Box>
         </Box>
       </Box>
+      <ContactUs />
+      <Footer />
     </>
   );
 }
