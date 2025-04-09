@@ -71,7 +71,6 @@ export default function Manualtab() {
             xs: "center",
             md: "space-evenly",
             lg: "space-between",
-            xl: "space-around",
           },
           alignItems: "center",
         }}>
