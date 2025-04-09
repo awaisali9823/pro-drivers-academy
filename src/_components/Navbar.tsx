@@ -5,21 +5,25 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import CustomButton from "./CustomButton";
 import { localFontSize } from "@/utils/themes";
+import { useRouter } from "next/navigation"; //usePathname
 
 export default function Navbar() {
+  const router = useRouter();
+  // const pathname = usePathname();
+
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const toggleDrawer = (open: boolean) => {
     setIsDrawerOpen(open);
   };
 
   const navLinks = [
-    "Home",
-    "About",
-    "Areas",
-    "Plans",
-    "Story",
-    "Gallery",
-    "Review",
+    { text: "home", route: "/" },
+    { text: "about", route: "/about-us" },
+    { text: "areas", route: "/areas" },
+    { text: "plans", route: "/plans" },
+    { text: "story", route: "/story" },
+    { text: "gallery", route: "/gallery" },
+    { text: "review", route: "/reviews" },
   ];
 
   return (
@@ -47,6 +51,7 @@ export default function Navbar() {
         >
           {/* logo box  */}
           <Box
+            onClick={() => router.push("/")}
             sx={{
               maxWidth: { xs: "112px ", xl: "140px" },
               width: "100%",
@@ -68,17 +73,27 @@ export default function Navbar() {
                 fontSize: localFontSize.p1,
                 transition: "all 0.4s ease-in-out",
                 cursor: "pointer",
+                textTransform: "capitalize",
                 "&:hover": {
                   color: "#FF191F",
                 },
               },
             }}
           >
-            {navLinks.map((text, index) => (
-              <Typography key={index}>{text}</Typography>
+            {navLinks.map((link, index) => (
+              <Typography
+                key={index}
+                onClick={() => router.push(link.route)}
+                style={{ cursor: "pointer" }}
+              >
+                {link.text}
+              </Typography>
             ))}
           </Box>
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Box
+            onClick={() => router.push("/contact-us")}
+            sx={{ display: { xs: "none", md: "block" } }}
+          >
             <CustomButton btnText="Contact Us" />
           </Box>
           <Box
@@ -154,11 +169,17 @@ export default function Navbar() {
         >
           {navLinks.map((link, i) => (
             <React.Fragment key={i}>
-              <Typography>{link}</Typography>
+              <Typography
+                onClick={() => router.push(link.route)}
+                sx={{ cursor: "pointer" }}
+              >
+                {link.text}
+              </Typography>
               <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
             </React.Fragment>
           ))}
           <Box
+            onClick={() => router.push("/contact-us")}
             sx={{ margin: "auto", width: "fit-content", paddingTop: "10px" }}
           >
             <CustomButton btnText="Contact Us" />
