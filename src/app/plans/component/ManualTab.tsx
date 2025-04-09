@@ -70,7 +70,7 @@ export default function Manualtab() {
           justifyContent: {
             xs: "center",
             md: "space-evenly",
-            lg: "space-around",
+            lg: "space-between",
             xl: "space-around",
           },
           alignItems: "center",
@@ -84,7 +84,7 @@ export default function Manualtab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 300, sm: 380, md: 400, xl: "400px" },
+                maxWidth: { xs: 300, sm: 380, md: 300, xl: "400px" },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}
