@@ -79,7 +79,6 @@ export default function Manualtab() {
 
           return (
             <Grid
-              item
               size={{ xs: 12, sm: 6, md: 4 }}
               key={index}
               sx={{

@@ -86,7 +86,7 @@ export default function AutomaticTab() {
 
           return (
             <Grid
-              item
+              
               size={{ xs: 12, sm: 6, md: 4 }}
               key={index}
               sx={{

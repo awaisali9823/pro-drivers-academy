@@ -18,7 +18,7 @@ export default function Plans() {
             sm: "30px 40px",
             md: "30px 60px",
             lg: "30px 100px",
-            xl: "0",
+            xl: "30px ",
           },
         }}>
         <Box
