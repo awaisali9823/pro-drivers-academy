@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
 import Tab from "@/_components/Tab";
-import Manualtab from "../_components/ManualTab";
-import AutomaticTab from "../_components/AutomaticTab";
+// import AutomaticTab from "../_components/AutomaticTab";
+import Passers from "../_components/Passers";
+import Stories from "../_components/Stories";
 
-export default function PlansSection() {
+export default function OurProudGraduates() {
   return (
     <>
       <Box
@@ -11,10 +12,10 @@ export default function PlansSection() {
           width: "100%",
           margin: "auto",
           padding: {
-            xs: " 20px  20px 0",
-            sm: " 40px 40px 0",
-            md: " 60px 60px 0",
-            lg: " 100px 100px 0 ",
+            xs: "20px 20px ",
+            sm: "40px 40px ",
+            md: "60px 60px 0",
+            lg: "100px 100px 0",
           },
         }}>
         <Box
@@ -33,12 +34,13 @@ export default function PlansSection() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              gap: 5,
             }}>
             <Tab
-              txt1="Manual"
-              txt2="Automatic"
-              Component1={<Manualtab />}
-              Component2={<AutomaticTab />}
+              txt1="Passers"
+              txt2="Stories"
+              Component1={<Passers />}
+              Component2={<Stories />}
             />
           </Box>
         </Box>

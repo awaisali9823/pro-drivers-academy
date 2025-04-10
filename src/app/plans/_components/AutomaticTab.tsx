@@ -64,8 +64,7 @@ export default function AutomaticTab() {
   return (
     <Box
       sx={{
-        py: 9,
-
+        pt: 9,
         maxWidth: { lg: "880px", xl: "1536px" },
         width: "100%",
         margin: "auto",

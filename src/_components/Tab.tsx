@@ -7,10 +7,15 @@ import {
   Typography,
 } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
-import ManualTabs from "./ManualTab";
-import AutomaticTab from "./AutomaticTab";
+type TabProps = {
+  txt1: string;
+  txt2: string;
 
-function LegalServicesTabs() {
+  Component1: React.ReactNode; // ✅ was React.FC
+  Component2: React.ReactNode;
+};
+
+function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
   const [selectedTab, setSelectedTab] = useState("Manual");
 
   const handleChange = (
@@ -22,7 +27,6 @@ function LegalServicesTabs() {
     }
   };
 
-  console.log(selectedTab, "selectedTab");
   return (
     <Box
       sx={{
@@ -76,7 +80,7 @@ function LegalServicesTabs() {
                 color: "#ffffff !important",
               },
             }}>
-            Manual
+            {txt1}
           </ToggleButton>
 
           <ToggleButton
@@ -101,7 +105,7 @@ function LegalServicesTabs() {
                 color: "#ffffff !important",
               },
             }}>
-            Automatic
+            {txt2}
           </ToggleButton>
         </ToggleButtonGroup>
 
@@ -120,7 +124,7 @@ function LegalServicesTabs() {
                 fontWeight: 500,
                 width: "100%",
               }}>
-              <ManualTabs />
+              {Component1}
             </Typography>
           ) : (
             <Typography
@@ -130,7 +134,7 @@ function LegalServicesTabs() {
                 // color: "#074592",
                 fontWeight: 500,
               }}>
-              <AutomaticTab />
+              {Component2}
             </Typography>
           )}
         </Box>
