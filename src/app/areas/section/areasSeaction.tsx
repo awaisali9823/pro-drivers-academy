@@ -1,10 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import Navbar from "@/_components/Navbar";
-import Hero from "../../_components/Hero";
-import { localFontSize } from "@/utils/themes";
-import Footer from "@/_components/Footer";
 
-export default function Areas() {
+import { localFontSize } from "@/utils/themes";
+
+export default function AreasSection() {
   const AreasdataOflocation = [
     {
       location:
@@ -19,24 +17,17 @@ export default function Areas() {
   ];
   return (
     <>
-      <Navbar />
-      <Hero
-        backgroundImage="bgAreas.png"
-        heading="Find Us Near You"
-        description="Pro Drive Academy is proudly based in Sheffield, offering lessons across surrounding areas. Check out our location and get started with lessons close to home."
-      />
       <Box
         sx={{
           width: "100%",
           margin: "auto",
           padding: {
-            xs: "20px 20px",
-            sm: "20px 40px",
-            md: "20px 60px",
-            lg: "30px 100px",
+            xs: " 20px",
+            sm: " 40px",
+            md: " 60px",
+            lg: " 100px",
           },
-        }}
-      >
+        }}>
         <Box
           sx={{
             margin: "auto",
@@ -44,8 +35,7 @@ export default function Areas() {
             height: "auto",
             width: "100%",
             fontFamily: "Poppins",
-          }}
-        >
+          }}>
           <Box
             sx={{
               width: "100%",
@@ -54,9 +44,8 @@ export default function Areas() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              gap: 6,
-            }}
-          >
+              gap: 8,
+            }}>
             {" "}
             <Typography
               sx={{
@@ -68,8 +57,7 @@ export default function Areas() {
                 letterSpacing: "0%",
                 textAlign: "center",
                 color: "#19222780",
-              }}
-            >
+              }}>
               We provide expert driving lessons across Rotherham and Sheffield,
               helping learners gain confidence and pass their test with ease.
             </Typography>
@@ -80,9 +68,9 @@ export default function Areas() {
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: { xs: "center", md: "space-between" },
+
                 alignItems: "center",
-              }}
-            >
+              }}>
               {AreasdataOflocation.map((items, index) => {
                 return (
                   <Box
@@ -100,11 +88,10 @@ export default function Areas() {
                         xl: "605px",
                       },
                       borderRadius: "30px",
-                      gap: 1,
+                      gap: 5,
 
                       boxShadow: "0px 6px 20px rgba(0,0,0,0.05)",
-                    }}
-                  >
+                    }}>
                     <Box
                       sx={{
                         height: { xs: "360px", lg: "466px" },
@@ -118,8 +105,7 @@ export default function Areas() {
                         backgroundColor: "#f9f9f9",
                         borderRadius: "30px",
                         overflow: "hidden",
-                      }}
-                    >
+                      }}>
                       <iframe
                         src={items.location}
                         style={{
@@ -137,11 +123,10 @@ export default function Areas() {
                       <Typography
                         sx={{
                           fontWeight: 500,
-                          fontSize: localFontSize.h3,
+                          fontSize: localFontSize.h4,
                           color: "#192227",
-                          py: 3,
-                        }}
-                      >
+                          // py: 3,
+                        }}>
                         {items.text}
                       </Typography>
                     </Box>
@@ -152,7 +137,6 @@ export default function Areas() {
           </Box>
         </Box>
       </Box>
-      <Footer />
     </>
   );
 }

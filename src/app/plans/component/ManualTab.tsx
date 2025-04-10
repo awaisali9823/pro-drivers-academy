@@ -53,7 +53,7 @@ export default function Manualtab() {
   return (
     <Box
       sx={{
-        py: 9,
+        pt: 9,
 
         maxWidth: "1536px",
         width: "100%",
@@ -71,6 +71,7 @@ export default function Manualtab() {
             xs: "center",
             md: "space-evenly",
             lg: "space-between",
+            // bgcolor: "#ccc",
           },
           alignItems: "center",
         }}>
@@ -83,7 +84,12 @@ export default function Manualtab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 420, sm: 380, md: 300, xl: "400px" },
+                maxWidth: {
+                  xs: 420,
+                  sm: 380,
+                  md: 310,
+                  xl: "400px",
+                },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -97,17 +103,22 @@ export default function Manualtab() {
                   border: "1px solid #eee",
                   cursor: "pointer",
                   transition: "all 0.4s ease",
-                  ".MuiCardContent-root": {
-                    // padding: "30px",
-                  },
+                  ".MuiCardContent-root": {},
                 }}>
-                <CardContent sx={{ p: 4 }}>
+                <CardContent
+                  sx={{
+                    p: 4,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 3,
+                    flexDirection: "column",
+                  }}>
                   <Typography
                     fontWeight="bold"
                     gutterBottom
                     sx={{
-                      padding: "20px 0",
-                      fontWeight: "700",
+                      // padding: "20px 0",
+                      fontWeight: "600",
                       fontSize: localFontSize.h5,
                       lineHeight: "100%",
                       letterSpacing: "0%",
@@ -142,7 +153,7 @@ export default function Manualtab() {
                             justifyContent: "center",
                             alignItems: "center",
                             fontFamily: "Poppins",
-                            gap: "6px",
+                            gap: "8px",
                           }}>
                           <Box
                             sx={{
@@ -156,7 +167,7 @@ export default function Manualtab() {
                           <Typography
                             gutterBottom
                             sx={{
-                              padding: "10px 2px",
+                              // padding: "0px 2px",
                               fontSize: localFontSize.p1,
                               fontWeight: "400",
 
@@ -172,7 +183,7 @@ export default function Manualtab() {
                     ))}
                   </ul>
                   <Typography
-                    padding="20px"
+                    // padding="20px"
                     variant="h4"
                     fontWeight="bold"
                     color={isHovered ? "#FF191F" : "#FF191F"}
