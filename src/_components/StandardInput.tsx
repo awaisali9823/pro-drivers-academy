@@ -10,6 +10,7 @@ interface StandardInputProps {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   error?: boolean;
   helperText?: string;
+  rows?: number; // added rows prop
 }
 
 const StandardInput: React.FC<StandardInputProps> = ({
@@ -20,7 +21,10 @@ const StandardInput: React.FC<StandardInputProps> = ({
   onBlur,
   error = false,
   helperText = "",
+  rows = 1, // default 1 row
 }) => {
+  const isMultiline = rows > 1;
+
   return (
     <TextField
       label={label}
@@ -32,6 +36,8 @@ const StandardInput: React.FC<StandardInputProps> = ({
       onBlur={onBlur}
       error={error}
       helperText={helperText}
+      multiline={isMultiline}
+      rows={isMultiline ? rows : undefined}
       InputLabelProps={{
         sx: {
           left: "8px",
@@ -46,7 +52,7 @@ const StandardInput: React.FC<StandardInputProps> = ({
         width: "100%",
         "& .MuiOutlinedInput-root": {
           borderRadius: "34px",
-          height: "60px",
+          height: isMultiline ? "auto" : "60px",
           color: "#00000080",
           fontSize: localFontSize.p1,
           "& fieldset": {

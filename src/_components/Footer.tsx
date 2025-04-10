@@ -4,10 +4,14 @@ import Image from "next/image";
 import { Box, Divider, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 import svgs from "@/_assets/svgs";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Footer() {
   const router = useRouter();
+  const pathname = usePathname();
+
+  const getColor = (route: string) =>
+    pathname === route ? "#FF191F" : "#FFFFFF80";
 
   return (
     <Box
@@ -77,7 +81,7 @@ export default function Footer() {
                   cursor: "pointer",
                   fontWeight: "400",
                   fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
+                  // color: "rgba(255,255,255,0.5)",
                   transition: "all 0.4s ease-in-out",
                   "&:hover": {
                     color: "#fff",
@@ -85,14 +89,28 @@ export default function Footer() {
                 },
               }}
             >
-              <Typography onClick={() => router.push("/")}>Home</Typography>
-              <Typography onClick={() => router.push("/about-us")}>
+              <Typography
+                sx={{ color: getColor("/") }}
+                onClick={() => router.push("/")}
+              >
+                Home
+              </Typography>
+              <Typography
+                sx={{ color: getColor("/about-us") }}
+                onClick={() => router.push("/about-us")}
+              >
                 About
               </Typography>
-              <Typography onClick={() => router.push("/areas")}>
+              <Typography
+                sx={{ color: getColor("/areas") }}
+                onClick={() => router.push("/areas")}
+              >
                 Area
               </Typography>
-              <Typography onClick={() => router.push("/plans")}>
+              <Typography
+                sx={{ color: getColor("/plans") }}
+                onClick={() => router.push("/plans")}
+              >
                 plans
               </Typography>
             </Box>
@@ -105,7 +123,6 @@ export default function Footer() {
                   cursor: "pointer",
                   fontWeight: "400",
                   fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
                   transition: "all 0.4s ease-in-out",
                   "&:hover": {
                     color: "#fff",
@@ -113,13 +130,22 @@ export default function Footer() {
                 },
               }}
             >
-              <Typography onClick={() => router.push("/story")}>
+              <Typography
+                sx={{ color: getColor("/story") }}
+                onClick={() => router.push("/story")}
+              >
                 Story
               </Typography>
-              <Typography onClick={() => router.push("/gallery")}>
+              <Typography
+                sx={{ color: getColor("/gallery") }}
+                onClick={() => router.push("/gallery")}
+              >
                 Gallery
               </Typography>
-              <Typography onClick={() => router.push("/reviews")}>
+              <Typography
+                sx={{ color: getColor("/reviews") }}
+                onClick={() => router.push("/reviews")}
+              >
                 Review
               </Typography>
             </Box>

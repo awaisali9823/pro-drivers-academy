@@ -8,7 +8,7 @@ export default function Story() {
     <>
       <Navbar />
       <Hero
-        backgroundImage="bgPlans.png"
+        backgroundImage="bgStory.png"
         heading="Driving Lessons That Fit Your Life"
         description="Explore our flexible plans designed for new drivers, busy schedules, and fast-track learners. Start when you're ready, learn at your speed."
       />

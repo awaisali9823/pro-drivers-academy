@@ -5,11 +5,13 @@ import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import CustomButton from "./CustomButton";
 import { localFontSize } from "@/utils/themes";
-import { useRouter } from "next/navigation"; //usePathname
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const router = useRouter();
-  // const pathname = usePathname();
+  const pathname = usePathname();
+  const getColor = (route: string) =>
+    pathname === route ? "#FF191F" : "#19222780";
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const toggleDrawer = (open: boolean) => {
@@ -84,7 +86,7 @@ export default function Navbar() {
               <Typography
                 key={index}
                 onClick={() => router.push(link.route)}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", color: getColor(link.route) }}
               >
                 {link.text}
               </Typography>
@@ -171,7 +173,10 @@ export default function Navbar() {
             <React.Fragment key={i}>
               <Typography
                 onClick={() => router.push(link.route)}
-                sx={{ cursor: "pointer" }}
+                sx={{
+                  cursor: "pointer",
+                  color: pathname === link.route ? "#FF191F" : "#ffffff",
+                }}
               >
                 {link.text}
               </Typography>
