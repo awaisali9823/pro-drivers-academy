@@ -1,10 +1,14 @@
-import svgs from "@/_assets/svgs";
-import { localFontSize } from "@/utils/themes";
-import { Box, Divider, Typography } from "@mui/material";
-import Image from "next/image";
+"use client";
 import React from "react";
+import Image from "next/image";
+import { Box, Divider, Typography } from "@mui/material";
+import { localFontSize } from "@/utils/themes";
+import svgs from "@/_assets/svgs";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+
   return (
     <Box
       sx={{
@@ -28,18 +32,18 @@ export default function Footer() {
             width: "100%",
             margin: "auto",
             display: "flex",
-            // flexDirection: { xs: "column", md: "row" },
             flexWrap: { xs: "wrap", md: "nowrap" },
             justifyContent: "space-between",
-            //   alignItems: { xs: "center", md: "flex-start" },
             alignItems: "flex-start",
             gap: { xs: "30px", md: "0px" },
           }}
         >
           <Box
+            onClick={() => router.push("/")}
             sx={{
               maxWidth: "405px",
               width: "100%",
+              cursor: "pointer",
             }}
           >
             <Image src={svgs.logoblack} alt="logo" height={78} width={208} />
@@ -69,43 +73,27 @@ export default function Footer() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "15px",
+                "& > *": {
+                  cursor: "pointer",
+                  fontWeight: "400",
+                  fontSize: localFontSize.p1,
+                  color: "rgba(255,255,255,0.5)",
+                  transition: "all 0.4s ease-in-out",
+                  "&:hover": {
+                    color: "#fff",
+                  },
+                },
               }}
             >
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
-                Home
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <Typography onClick={() => router.push("/")}>Home</Typography>
+              <Typography onClick={() => router.push("/about-us")}>
                 About
               </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <Typography onClick={() => router.push("/areas")}>
                 Area
               </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
-                Price
+              <Typography onClick={() => router.push("/plans")}>
+                plans
               </Typography>
             </Box>
             <Box
@@ -113,33 +101,25 @@ export default function Footer() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "15px",
+                "& > *": {
+                  cursor: "pointer",
+                  fontWeight: "400",
+                  fontSize: localFontSize.p1,
+                  color: "rgba(255,255,255,0.5)",
+                  transition: "all 0.4s ease-in-out",
+                  "&:hover": {
+                    color: "#fff",
+                  },
+                },
               }}
             >
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <Typography onClick={() => router.push("/story")}>
                 Story
               </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <Typography onClick={() => router.push("/gallery")}>
                 Gallery
               </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: localFontSize.p1,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <Typography onClick={() => router.push("/reviews")}>
                 Review
               </Typography>
             </Box>
@@ -174,6 +154,9 @@ export default function Footer() {
                 alignItems: "center",
                 gap: "30px",
                 marginTop: { xs: "20px", md: "40px" },
+                "& > *": {
+                  cursor: "pointer",
+                },
               }}
             >
               <Image
