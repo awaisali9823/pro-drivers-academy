@@ -39,6 +39,7 @@ function LegalServicesTabs() {
 
           textAlign: "center",
         }}>
+        {/* tab */}
         <ToggleButtonGroup
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -126,7 +127,7 @@ function LegalServicesTabs() {
               sx={{
                 fontSize: "20px",
                 fontFamily: "Poppins",
-                color: "#074592",
+                // color: "#074592",
                 fontWeight: 500,
               }}>
               <AutomaticTab />
