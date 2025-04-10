@@ -83,12 +83,12 @@ export default function NewLocation() {
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d213721.6821786791!2d-1.8112425815985083!3d53.39531057021047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790aa9fae8be15%3A0x3e2827f5af06b078!2sSheffield%2C%20UK!5e1!3m2!1sen!2s!4v1744105708905!5m2!1sen!2s"
-            style={{ border: 0, width: "100%", height: "100%" }}
-            allowFullScreen
+            style={{ height: "100%", width: "100%" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38031.31253190809!2d-1.4084517456955838!3d53.43347651241581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790a41d8154027%3A0x5d4fabde0673d601!2sRotherham%2C%20UK!5e0!3m2!1sen!2s!4v1744275051720!5m2!1sen!2s"
+            width="600"
+            height="450"
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          ></iframe>
         </Box>
       </Box>
 

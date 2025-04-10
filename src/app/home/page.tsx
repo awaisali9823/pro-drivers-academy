@@ -1,6 +1,7 @@
 import Navbar from "@/_components/Navbar";
 import HeroHome from "./_sections/HeroHome";
 import StatsBanner from "./_sections/StatsBanner";
+import LetsGetStarted from "./_sections/LetsGetStarted";
 import PopularCourses from "./_sections/PopularCourses";
 import NewLocation from "./_sections/NewLocation";
 import ContactUs from "@/_components/ContactUs";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Navbar />
       <HeroHome />
       <StatsBanner />
+      <LetsGetStarted />
       <PopularCourses />
       <NewLocation />
       <ContactUs />
