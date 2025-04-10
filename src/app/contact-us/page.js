@@ -8,7 +8,7 @@ export default function page() {
     <>
       <Navbar />
       <Hero
-        backgroundImage="road.png"
+        backgroundImage="bgContactUs.png"
         heading="Your Journey Starts Here"
         description="Join Pro Drive Academy, the UK's trusted driving school, and gain the skills you need to drive safely and pass your test with ease."
       />

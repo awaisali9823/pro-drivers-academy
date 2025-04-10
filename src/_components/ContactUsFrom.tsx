@@ -42,7 +42,7 @@ export default function ContactUsFrom() {
       >
         <Box
           sx={{
-            height: { xs: "348px", md: "388px" },
+            height: { xs: "348px", md: "499px", lg: "517px" },
             maxWidth: { md: "400px", lg: "530px", xl: "600px" },
             width: "100%",
           }}
@@ -111,7 +111,7 @@ export default function ContactUsFrom() {
                 <MenuItem value={30}>select driving lesson package</MenuItem>
               </Select>
             </FormControl>
-            <StandardInput inputType="text" label="Message" />
+            <StandardInput rows={6} inputType="text" label="Message" />
           </Box>
           <CustomButton
             btnText="Send"
