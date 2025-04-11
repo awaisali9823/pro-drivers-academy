@@ -17,22 +17,19 @@ export default function ContactUs() {
             md: "50px 60px",
             lg: "80px 100px",
           },
-        }}
-      >
+        }}>
         <Box
           sx={{
             maxWidth: "1536px",
             width: "100%",
             margin: "auto",
-          }}
-        >
+          }}>
           <Box
             sx={{
               maxWidth: "618px",
               width: "100%",
               margin: "auto",
-            }}
-          >
+            }}>
             <Typography
               sx={{
                 fontWeight: "700",
@@ -42,8 +39,7 @@ export default function ContactUs() {
                 maxWidth: "496px",
                 width: "100%",
                 margin: "auto",
-              }}
-            >
+              }}>
               Let&apos;s Connect – <br /> We&apos;re Here to Help!
             </Typography>
             <Typography
@@ -53,8 +49,7 @@ export default function ContactUs() {
                 color: "rgba(25, 34, 39, 0.5)",
                 textAlign: "center",
                 marginTop: { xs: "15px", md: "30px" },
-              }}
-            >
+              }}>
               Whether you have questions or want to start your driving journey,
               our team is ready to assist. Contact us today and take the first
               step!
@@ -68,8 +63,7 @@ export default function ContactUs() {
               justifyContent: { xs: "center", xl: "space-between" },
               alignItems: { xs: "center", md: "initial" },
               marginTop: { xs: "40px", md: "80px" },
-            }}
-          >
+            }}>
             <ContactBox
               imgPath={Call}
               heading="Call Us"
@@ -118,8 +112,7 @@ export function ContactBox({
         padding: "30px",
         borderRadius: "22.5px",
         background: "rgba(25,34,39,1)",
-      }}
-    >
+      }}>
       <Image src={imgPath} alt={alt} height={56} width={56} />
       <Typography
         sx={{
@@ -127,8 +120,7 @@ export function ContactBox({
           fontSize: localFontSize.h5,
           color: "#fff",
           marginTop: { xs: "20px", md: "30px" },
-        }}
-      >
+        }}>
         {heading}
       </Typography>
       <Typography
@@ -136,8 +128,7 @@ export function ContactBox({
           fontWeight: "400",
           fontSize: localFontSize.p1,
           color: "#fff",
-        }}
-      >
+        }}>
         {timing}
       </Typography>
       <Typography
@@ -147,8 +138,7 @@ export function ContactBox({
           color: "#fff",
           textDecoration: "underline",
           marginTop: { xs: "20px", md: "30px" },
-        }}
-      >
+        }}>
         {contact}
       </Typography>
     </Box>

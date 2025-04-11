@@ -6,12 +6,12 @@ export default function AreasSection() {
   const AreasdataOflocation = [
     {
       location:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53382.493371610566!2d-1.4084517456955838!3d53.43347651241581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790a41d8154027%3A0x5d4fabde0673d601!2sRotherham%2C%20UK!5e1!3m2!1sen!2s!4v1744105596561!5m2!1sen!2s",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38031.31253190809!2d-1.4084517456955838!3d53.43347651241581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790a41d8154027%3A0x5d4fabde0673d601!2sRotherham%2C%20UK!5e0!3m2!1sen!2s!4v1744275051720!5m2!1sen!2s",
       text: "Rotherham",
     },
     {
       location:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d213721.6821786791!2d-1.8112425815985083!3d53.39531057021047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790aa9fae8be15%3A0x3e2827f5af06b078!2sSheffield%2C%20UK!5e1!3m2!1sen!2s!4v1744105708905!5m2!1sen!2s",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d76130.2389396486!2d-1.5818554603242845!3d53.395688287712964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48790aa9fae8be15%3A0x3e2827f5af06b078!2sSheffield%2C%20UK!5e0!3m2!1sen!2s!4v1744275140990!5m2!1sen!2s",
       text: "Sheffield",
     },
   ];
