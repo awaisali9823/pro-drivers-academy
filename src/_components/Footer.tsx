@@ -5,6 +5,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 import svgs from "@/_assets/svgs";
 import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Footer() {
   const router = useRouter();
@@ -220,18 +221,26 @@ export default function Footer() {
           color: "rgba(255, 255, 255, 0.5)",
           padding: { xs: "30px 20px", md: "30px 0px" },
           textAlign: { xs: "center" },
-        }}
-      >
-        Copyright © 2024 Pro Drive Academy. All Rights Reserved.{" "}
-        <span
-          style={{
+          "& a": {
             fontSize: "inherit",
             fontWeight: "400",
             color: "#fff",
-          }}
+            textDecoration: "none",
+            transition: "all 0.4s ease-in-out",
+            "&:hover": {
+              color: "#FF191F",
+            },
+          },
+        }}
+      >
+        Copyright © 2024 Pro Drive Academy. All Rights Reserved.{" "}
+        <Link
+          href="https://www.qashnova.com/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Powered By Qashnova
-        </span>
+        </Link>
       </Typography>
     </Box>
   );

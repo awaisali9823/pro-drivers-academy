@@ -137,11 +137,11 @@ export default function Navbar() {
           width: isDrawerOpen ? { xs: "200px", sm: "300px" } : "0",
           backgroundColor: "#0D0D0D",
           color: "white",
-          overflow: "hidden",
           transition: "all .5s ease",
           zIndex: "10",
           textWrap: "nowrap",
-          padding: isDrawerOpen ? "40px 20px" : "0",
+          padding: "40px 20px",
+          transform: isDrawerOpen ? "translateX(0)" : "translateX(200px)",
         }}
       >
         <Box
@@ -181,8 +181,12 @@ export default function Navbar() {
           {navLinks.map((link, i) => (
             <React.Fragment key={i}>
               <Typography
-                onClick={() => router.push(link.route)}
+                onClick={() => {
+                  toggleDrawer(false);
+                  router.push(link.route);
+                }}
                 sx={{
+                  textTransform: "capitalize",
                   cursor: "pointer",
                   color: pathname === link.route ? "#FF191F" : "#ffffff",
                 }}
