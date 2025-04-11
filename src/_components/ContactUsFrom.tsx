@@ -40,6 +40,8 @@ export default function ContactUsFrom() {
         }}
       >
         <Box
+          data-aos="fade-right"
+          data-aos-duration="500"
           sx={{
             height: { xs: "348px", md: "499px", lg: "517px" },
             maxWidth: { md: "400px", lg: "530px", xl: "600px" },
@@ -56,6 +58,8 @@ export default function ContactUsFrom() {
 
         <Box sx={{ width: "100%" }}>
           <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               width: "100%",
               display: "flex",

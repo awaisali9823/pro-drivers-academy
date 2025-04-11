@@ -43,6 +43,8 @@ export default function Footer() {
           }}
         >
           <Box
+            data-aos="fade-right"
+            data-aos-duration="500"
             onClick={() => router.push("/")}
             sx={{
               maxWidth: "405px",
@@ -64,6 +66,8 @@ export default function Footer() {
             </Typography>
           </Box>
           <Box
+            data-aos="zoom-in"
+            data-aos-duration="500"
             sx={{
               display: "flex",
               alignItems: "flex-start",
@@ -151,6 +155,8 @@ export default function Footer() {
             </Box>
           </Box>
           <Box
+            data-aos="fade-left"
+            data-aos-duration="500"
             sx={{
               maxWidth: "190px",
               width: "100%",

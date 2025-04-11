@@ -55,7 +55,11 @@ type StatItemProps = {
 
 function StatItem({ highlight, line1, line2 }: StatItemProps) {
   return (
-    <Box sx={{ display: "flex", gap: { xs: "20px", sm: "15px", md: "22px" } }}>
+    <Box
+      data-aos="zoom-in"
+      data-aos-duration="500"
+      sx={{ display: "flex", gap: { xs: "20px", sm: "15px", md: "22px" } }}
+    >
       <Typography
         sx={{ color: "#FFFFFF", fontWeight: 700, fontSize: localFontSize.h3 }}
       >

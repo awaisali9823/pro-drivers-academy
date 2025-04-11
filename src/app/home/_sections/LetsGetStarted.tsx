@@ -127,6 +127,8 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <>
       <Box
+        data-aos={reverseOrder ? "fade-right" : "fade-left"}
+        data-aos-duration="500"
         sx={{
           display: "flex",
           alignItems: "center",

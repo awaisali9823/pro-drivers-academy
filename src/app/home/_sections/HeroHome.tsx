@@ -26,7 +26,12 @@ export default function HomePage() {
         }}
         container
       >
-        <Grid sx={{}} size={{ xs: 12, md: 6 }}>
+        <Grid
+          data-aos="fade-right"
+          data-aos-duration="500"
+          sx={{}}
+          size={{ xs: 12, md: 6 }}
+        >
           <Box
             sx={{
               position: "relative",
@@ -42,6 +47,8 @@ export default function HomePage() {
           </Box>
         </Grid>
         <Grid
+          data-aos="fade-left"
+          data-aos-duration="500"
           sx={{
             padding: {
               xs: "20px 0 0 20px",

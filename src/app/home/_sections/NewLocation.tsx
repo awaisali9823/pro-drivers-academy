@@ -35,7 +35,11 @@ export default function NewLocation() {
           flexDirection: { xs: "column-reverse", md: "row" },
         }}
       >
-        <Box sx={{ maxWidth: { xs: "380px", sm: "600px", md: "800px" } }}>
+        <Box
+          data-aos="fade-right"
+          data-aos-duration="500"
+          sx={{ maxWidth: { xs: "380px", sm: "600px", md: "800px" } }}
+        >
           <Typography
             sx={{
               color: "#fff",
@@ -74,6 +78,8 @@ export default function NewLocation() {
           </Button>
         </Box>
         <Box
+          data-aos="fade-left"
+          data-aos-duration="500"
           sx={{
             height: { xs: "360px", xl: "455px" },
             maxWidth: { md: "440px", xl: "620px" },

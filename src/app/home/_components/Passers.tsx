@@ -44,12 +44,15 @@ export default function Passers() {
   return (
     <>
       <Box
+        data-aos="zoom-in"
+        data-aos-duration="500"
         sx={{
           width: "100%",
           maxWidth: "1560px",
           margin: "auto",
           pt: { xs: 4, sm: 6, md: 9 },
-        }}>
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -57,7 +60,8 @@ export default function Passers() {
             height: "auto",
             width: "100%",
             fontFamily: "Poppins",
-          }}>
+          }}
+        >
           <Box
             sx={{
               maxwidth: { xs: 361, sm: 600, md: "1560px" },
@@ -66,7 +70,8 @@ export default function Passers() {
               justifyContent: "center",
               alignItems: "center",
               gap: { xs: 4, sm: 6, md: 8 },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 maxWidth: { xs: 361, sm: 600, md: "808px" },
@@ -76,7 +81,8 @@ export default function Passers() {
                 alignItems: "center",
                 fontFamily: "Poppins",
                 gap: { xs: 2, md: 5 },
-              }}>
+              }}
+            >
               <Typography
                 sx={{
                   maxWidth: { xs: 361, md: "526px" },
@@ -88,7 +94,8 @@ export default function Passers() {
                   textAlign: "center",
                   textTransform: "capitalize",
                   color: "#192227",
-                }}>
+                }}
+              >
                 Our Proud Graduates{" "}
               </Typography>
               <Typography
@@ -101,7 +108,8 @@ export default function Passers() {
                   letterSpacing: "0%",
                   textAlign: "center",
                   color: "#19222780",
-                }}>
+                }}
+              >
                 Meet the learners who have successfully earned their driving
                 licenses with Pro Drive Academy. You could be next on the road
                 to success!
@@ -119,7 +127,8 @@ export default function Passers() {
                 },
                 alignItems: "start",
                 gap: 3,
-              }}>
+              }}
+            >
               <Box sx={{ width: "100%" }}>
                 <Slider {...settings}>
                   {imageData.map((item, index) => (
@@ -128,14 +137,16 @@ export default function Passers() {
                       sx={{
                         px: { sm: 1.5 }, // horizontal space between slides (e.g. 12px)
                         boxSizing: "border-box",
-                      }}>
+                      }}
+                    >
                       <Box
                         sx={{
                           width: "100%",
                           maxWidth: {
                             xs: "750px",
                           },
-                        }}>
+                        }}
+                      >
                         <Image
                           src={item.image}
                           alt={`Graduate ${index + 1}`}

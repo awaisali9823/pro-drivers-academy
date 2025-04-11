@@ -1,11 +1,13 @@
 "use client";
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Divider } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 import CustomButton from "./CustomButton";
 import { localFontSize } from "@/utils/themes";
 import { useRouter, usePathname } from "next/navigation";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Navbar() {
   const router = useRouter();
@@ -17,6 +19,11 @@ export default function Navbar() {
   const toggleDrawer = (open: boolean) => {
     setIsDrawerOpen(open);
   };
+
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
 
   const navLinks = [
     { text: "home", route: "/" },
@@ -42,6 +49,8 @@ export default function Navbar() {
         }}
       >
         <Box
+          data-aos="zoom-in"
+          data-aos-duration="500"
           sx={{
             display: "flex",
             justifyContent: "space-between",

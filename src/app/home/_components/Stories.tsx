@@ -60,12 +60,15 @@ export default function Stories() {
   return (
     <>
       <Box
+        data-aos="zoom-in"
+        data-aos-duration="500"
         sx={{
           width: "100%",
           maxWidth: "1560px",
           margin: "auto",
           pt: { xs: 4, sm: 6, md: 9 },
-        }}>
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -73,7 +76,8 @@ export default function Stories() {
             height: "auto",
             width: "100%",
             fontFamily: "Poppins",
-          }}>
+          }}
+        >
           <Box
             sx={{
               maxwidth: "1560px",
@@ -84,7 +88,8 @@ export default function Stories() {
               justifyContent: { sm: "center", lg: "space-between" },
               alignItems: { xs: "start", sm: "center", lg: "start" },
               gap: { xs: 4, sm: 6, md: 3 },
-            }}>
+            }}
+          >
             <Box
               sx={{
                 maxWidth: { xs: "395px", sm: "900", lg: "395" },
@@ -95,7 +100,8 @@ export default function Stories() {
                 alignItems: { xs: "start", sm: "center", lg: "start" },
                 fontFamily: "Poppins",
                 gap: { xs: 2, md: 3 },
-              }}>
+              }}
+            >
               <Typography
                 sx={{
                   // maxWidth: { xs: 361, sm: "800", lg: "392px" },
@@ -107,7 +113,8 @@ export default function Stories() {
                   textAlign: { xs: "start", sm: "center", lg: "start" },
                   textTransform: "capitalize",
                   color: "#192227",
-                }}>
+                }}
+              >
                 Clients success stories
               </Typography>
               <Typography
@@ -122,7 +129,8 @@ export default function Stories() {
                   textAlign: { xs: "start", sm: "center", lg: "start" },
 
                   color: "#19222780",
-                }}>
+                }}
+              >
                 Hear from our students who mastered the road with Pro Drive
                 Academy. Real stories, real success – your journey starts here!
               </Typography>
@@ -141,7 +149,8 @@ export default function Stories() {
 
                 alignItems: "start",
                 gap: 3,
-              }}>
+              }}
+            >
               <Box sx={{ width: "100%" }}>
                 <Slider {...settings}>
                   {reviewData.map((data, index) => (
@@ -150,7 +159,8 @@ export default function Stories() {
                       sx={{
                         px: { sm: 1.5 }, // horizontal space between slides (e.g. 12px)
                         // boxSizing: "border-box",
-                      }}>
+                      }}
+                    >
                       <Box
                         key={data.id}
                         sx={{
@@ -164,12 +174,14 @@ export default function Stories() {
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "start",
-                        }}>
+                        }}
+                      >
                         <Card
                           key={data.id}
                           imgSrc={data.imgSrc}
                           desc={data.description}
-                          name={data.name}></Card>
+                          name={data.name}
+                        ></Card>
                       </Box>
                     </Box>
                   ))}

@@ -1,3 +1,5 @@
+"use client";
+import React, { useEffect } from "react";
 import Navbar from "@/_components/Navbar";
 import HeroHome from "./_sections/HeroHome";
 import StatsBanner from "./_sections/StatsBanner";
@@ -6,12 +8,16 @@ import PopularCourses from "./_sections/PopularCourses";
 import NewLocation from "./_sections/NewLocation";
 import ContactUs from "@/_components/ContactUs";
 import Footer from "@/_components/Footer";
-// import Tab from "@/_components/Tab";
-// import Manualtab from "../plans/_components/ManualTab";
-// import AutomaticTab from "../plans/_components/AutomaticTab";
 import OurProudGraduates from "./_sections/OurProudGraduates";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function HomePage() {
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Navbar />
