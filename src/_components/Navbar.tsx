@@ -64,7 +64,7 @@ export default function Navbar() {
           <Box
             onClick={() => router.push("/")}
             sx={{
-              maxWidth: { xs: "112px ", xl: "140px" },
+              maxWidth: { xs: "130px ", lg: "135px", xl: "150px" },
               width: "100%",
               cursor: "pointer",
             }}

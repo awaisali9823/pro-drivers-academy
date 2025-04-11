@@ -39,8 +39,9 @@ export default function Footer() {
             display: "flex",
             flexWrap: { xs: "wrap", md: "nowrap" },
             justifyContent: "space-between",
-            alignItems: "flex-start",
-            gap: { xs: "30px", md: "0px" },
+            alignItems: { xs: "center", sm: "flex-start" },
+            gap: { xs: "40px", md: "0px" },
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <Box
@@ -53,13 +54,24 @@ export default function Footer() {
               cursor: "pointer",
             }}
           >
-            <Image src={svgs.logoblack} alt="logo" height={78} width={208} />
+            <Box
+              sx={{
+                width: "100%",
+                "& :first-child": {
+                  display: { xs: "block", sm: "inline" },
+                  margin: { xs: "auto", sm: "unset" },
+                },
+              }}
+            >
+              <Image src={svgs.logoblack} alt="logo" height={78} width={208} />
+            </Box>
             <Typography
               sx={{
                 fontSize: localFontSize.p1,
                 fontWeight: "400",
                 color: "rgba(255,255,255,0.5)",
                 marginTop: "20px",
+                textAlign: { xs: "center", sm: "left" },
               }}
             >
               When you choose “Pro Drive Academy” you can be sure you’re in safe
@@ -71,16 +83,17 @@ export default function Footer() {
             data-aos-duration="500"
             sx={{
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: { xs: "center", sm: "flex-start" },
               maxWidth: "152px",
               width: "100%",
-              gap: "40px",
+              gap: { xs: "20px", sm: "40px" },
+              flexDirection: { xs: "column", sm: "row" },
             }}
           >
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: { xs: "row", sm: "column" },
                 gap: "15px",
                 "& > *": {
                   cursor: "pointer",
@@ -122,7 +135,7 @@ export default function Footer() {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: { xs: "row", sm: "column" },
                 gap: "15px",
                 "& > *": {
                   cursor: "pointer",
@@ -185,6 +198,7 @@ export default function Footer() {
               sx={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: { xs: "center", sm: "unset" },
                 gap: "30px",
                 marginTop: { xs: "20px", md: "40px" },
                 "& > *": {
