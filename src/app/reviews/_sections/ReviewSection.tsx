@@ -59,30 +59,26 @@ export default function ReviewSection() {
           md: "80px 60px",
           lg: "100px 100px",
         },
-      }}
-    >
+      }}>
       <Box
         sx={{
           maxWidth: "1536px",
           width: "100%",
           margin: "auto",
-        }}
-      >
+        }}>
         <Box
           sx={{
             maxWidth: "700px",
             width: "100%",
             margin: "auto",
-          }}
-        >
+          }}>
           <Typography
             sx={{
               fontWeight: "400",
               fontSize: localFontSize.p1,
               color: "rgba(25,34,39,0.5)",
               textAlign: "center",
-            }}
-          >
+            }}>
             See why learners trust Pro Drive Academy to help them pass their
             driving test with confidence. Read real reviews from our successful
             students
@@ -91,8 +87,7 @@ export default function ReviewSection() {
         <Grid
           container
           spacing={{ xs: "20px", md: "30px", xl: "40px" }}
-          sx={{ marginTop: { xs: "30px", md: "80px" } }}
-        >
+          sx={{ marginTop: { xs: "30px", md: "80px" } }}>
           {reviewData.map((data) => (
             <Grid
               key={data.id}
@@ -100,8 +95,7 @@ export default function ReviewSection() {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-              }}
-            >
+              }}>
               <Card
                 key={data.id}
                 imgSrc={data.imgSrc}

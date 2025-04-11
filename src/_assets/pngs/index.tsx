@@ -22,6 +22,8 @@ import monica from "./monica.png";
 import jordie from "./jordie.png";
 import millie from "./millie.png";
 import jai from "./jai.png";
+import ourProundGimg2 from "./ourProundGimg2.png";
+import ourProundGimg1 from "./ourProundGimg1.png";
 import applyForLicense from "./applyForLicense.png";
 import bgLetsGetStarted from "./bgLetsGetStarted.png";
 
@@ -50,6 +52,8 @@ const pngs = {
   monica,
   jai,
   millie,
+  ourProundGimg1,
+  ourProundGimg2,
   applyForLicense,
   bgLetsGetStarted,
 };

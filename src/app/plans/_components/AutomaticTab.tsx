@@ -45,33 +45,38 @@ const pricingPlans = [
       "Affordable Price",
     ],
   },
+  {
+    duration: "2 Hours Driving Lesson",
+    price: "£74",
+    features: [
+      "DVSA Approved Instructors",
+      "No Hidden Charges",
+      "High Pass Rate",
+      "Friendly Environment",
+      "Affordable Price",
+    ],
+  },
 ];
 
-export default function Manualtab() {
+export default function AutomaticTab() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <Box
       sx={{
-        py: 9,
-
-        maxWidth: "1536px",
+        pt: 9,
+        maxWidth: { lg: "880px", xl: "1536px" },
         width: "100%",
         margin: "auto",
       }}>
       <Grid
         container
         spacing={3}
-        rowSpacing={10}
         justifyContent="space-between"
         alignItems="center"
         sx={{
           display: "flex",
-          justifyContent: {
-            xs: "center",
-            md: "space-evenly",
-            lg: "space-between",
-          },
+          justifyContent: { xs: "center", md: "space-between" },
           alignItems: "center",
         }}>
         {pricingPlans.map((plan, index) => {
@@ -83,7 +88,7 @@ export default function Manualtab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 420, sm: 380, md: 300, xl: "400px" },
+                maxWidth: { xs: 300, sm: 380, md: 400 },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -93,13 +98,10 @@ export default function Manualtab() {
                   color: isHovered ? "#fff" : "#192227",
                   borderRadius: "20px",
                   height: "100%",
-                  boxShadow: "1px 4px 20px 1px rgba(0,0,0,0.11)",
+                  boxShadow: "1px 4px 20px 1px rgba(0,0,0,0.1)",
                   border: "1px solid #eee",
                   cursor: "pointer",
-                  transition: "all 0.4s ease",
-                  ".MuiCardContent-root": {
-                    // padding: "30px",
-                  },
+                  transition: "all 0.3s ease",
                 }}>
                 <CardContent sx={{ p: 4 }}>
                   <Typography
@@ -149,9 +151,10 @@ export default function Manualtab() {
                               width: "8px",
                               height: "8px",
                               marginTop: "-6px",
+
                               bgcolor: isHovered ? "#fff" : "#192227",
                               borderRadius: "50%",
-                              transition: "background-color 0.4s ease",
+                              transition: "background-color 0.3s ease",
                             }}></Box>
                           <Typography
                             gutterBottom
@@ -200,6 +203,7 @@ export default function Manualtab() {
                       fontWeight: "400",
                       lineHeight: "100%",
                       letterSpacing: "0%",
+
                       transition: "all 0.3s ease",
                       padding: "14px 25px ",
                       "&:hover": {

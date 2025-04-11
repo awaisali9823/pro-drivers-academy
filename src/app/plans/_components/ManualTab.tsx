@@ -45,39 +45,34 @@ const pricingPlans = [
       "Affordable Price",
     ],
   },
-  {
-    duration: "2 Hours Driving Lesson",
-    price: "£74",
-    features: [
-      "DVSA Approved Instructors",
-      "No Hidden Charges",
-      "High Pass Rate",
-      "Friendly Environment",
-      "Affordable Price",
-    ],
-  },
 ];
 
-export default function AutomaticTab() {
+export default function Manualtab() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <Box
       sx={{
-        py: 9,
+        pt: 9,
 
-        maxWidth: { lg: "880px", xl: "1536px" },
+        maxWidth: "1536px",
         width: "100%",
         margin: "auto",
       }}>
       <Grid
         container
         spacing={3}
+        rowSpacing={10}
         justifyContent="space-between"
         alignItems="center"
         sx={{
           display: "flex",
-          justifyContent: { xs: "center", md: "space-between" },
+          justifyContent: {
+            xs: "center",
+            md: "space-evenly",
+            lg: "space-between",
+            // bgcolor: "#ccc",
+          },
           alignItems: "center",
         }}>
         {pricingPlans.map((plan, index) => {
@@ -89,7 +84,12 @@ export default function AutomaticTab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 300, sm: 380, md: 400 },
+                maxWidth: {
+                  xs: 420,
+                  sm: 380,
+                  md: 310,
+                  xl: "400px",
+                },
               }}>
               <Card
                 onMouseEnter={() => setHoveredIndex(index)}
@@ -99,18 +99,26 @@ export default function AutomaticTab() {
                   color: isHovered ? "#fff" : "#192227",
                   borderRadius: "20px",
                   height: "100%",
-                  boxShadow: "1px 4px 20px 1px rgba(0,0,0,0.1)",
+                  boxShadow: "1px 4px 20px 1px rgba(0,0,0,0.11)",
                   border: "1px solid #eee",
                   cursor: "pointer",
-                  transition: "all 0.3s ease",
+                  transition: "all 0.4s ease",
+                  ".MuiCardContent-root": {},
                 }}>
-                <CardContent sx={{ p: 4 }}>
+                <CardContent
+                  sx={{
+                    p: 4,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 3,
+                    flexDirection: "column",
+                  }}>
                   <Typography
                     fontWeight="bold"
                     gutterBottom
                     sx={{
-                      padding: "20px 0",
-                      fontWeight: "700",
+                      // padding: "20px 0",
+                      fontWeight: "600",
                       fontSize: localFontSize.h5,
                       lineHeight: "100%",
                       letterSpacing: "0%",
@@ -145,22 +153,21 @@ export default function AutomaticTab() {
                             justifyContent: "center",
                             alignItems: "center",
                             fontFamily: "Poppins",
-                            gap: "6px",
+                            gap: "8px",
                           }}>
                           <Box
                             sx={{
                               width: "8px",
                               height: "8px",
                               marginTop: "-6px",
-
                               bgcolor: isHovered ? "#fff" : "#192227",
                               borderRadius: "50%",
-                              transition: "background-color 0.3s ease",
+                              transition: "background-color 0.4s ease",
                             }}></Box>
                           <Typography
                             gutterBottom
                             sx={{
-                              padding: "10px 2px",
+                              // padding: "0px 2px",
                               fontSize: localFontSize.p1,
                               fontWeight: "400",
 
@@ -176,7 +183,7 @@ export default function AutomaticTab() {
                     ))}
                   </ul>
                   <Typography
-                    padding="20px"
+                    // padding="20px"
                     variant="h4"
                     fontWeight="bold"
                     color={isHovered ? "#FF191F" : "#FF191F"}
@@ -204,7 +211,6 @@ export default function AutomaticTab() {
                       fontWeight: "400",
                       lineHeight: "100%",
                       letterSpacing: "0%",
-
                       transition: "all 0.3s ease",
                       padding: "14px 25px ",
                       "&:hover": {
