@@ -137,78 +137,82 @@ export default function FAQ({ data }: ImmigrationSupportProps) {
             }}
           >
             {accordionsToRender.map((item, index) => (
-              <Accordion
+              <Box
+                sx={{ width: "100%" }}
+                key={index}
                 data-aos="zoom-in"
                 data-aos-duration="500"
-                key={index}
-                expanded={expanded === `panel${index}`}
-                onChange={handleAccordionChange(`panel${index}`)}
-                sx={{
-                  background: "rgba(25, 34, 39, 0.05)",
-                  boxShadow: "none",
-                  borderRadius: "20px !important",
-                  padding: { xs: "10px", md: "20px" },
-                  "&::before": {
-                    display: "none",
-                    content: "none",
-                  },
-                }}
               >
-                <AccordionSummary
-                  expandIcon={
-                    expanded === `panel${index}` ? (
-                      <Typography
-                        sx={{
-                          background: "#ff191f",
-                          height: { xs: "17px", md: "34px" },
-                          width: { xs: "17px", md: "34px" },
-                          borderRadius: "50%",
-                          fontSize: { xs: "17px", md: "34px" },
-                          color: "#fff",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        -
-                      </Typography>
-                    ) : (
-                      <Typography
-                        sx={{
-                          background: "red",
-                          height: { xs: "17px", md: "34px" },
-                          width: { xs: "17px", md: "34px" },
-                          borderRadius: "50%",
-                          fontSize: { xs: "17px", md: "34px" },
-                          color: "#fff",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        +
-                      </Typography>
-                    )
-                  }
+                <Accordion
+                  expanded={expanded === `panel${index}`}
+                  onChange={handleAccordionChange(`panel${index}`)}
                   sx={{
-                    color: "rgba(25, 34, 39, 1)",
-                    fontWeight: "600",
-                    fontSize: localFontSize.p1,
-                    // lineHeight: localFontSize.h4,
-                    paddingX: "0",
-                    borderRadius: "0",
+                    background: "rgba(25, 34, 39, 0.05)",
+                    boxShadow: "none",
+                    borderRadius: "20px !important",
+                    padding: { xs: "10px", md: "20px" },
+                    "&::before": {
+                      display: "none",
+                      content: "none",
+                    },
                   }}
                 >
-                  {item.title}
-                </AccordionSummary>
-                <AccordionDetails sx={{ paddingX: "0" }}>
-                  <Typography
-                    sx={{ color: "#00000080", fontSize: localFontSize.p2 }}
+                  <AccordionSummary
+                    expandIcon={
+                      expanded === `panel${index}` ? (
+                        <Typography
+                          sx={{
+                            background: "#ff191f",
+                            height: { xs: "17px", md: "34px" },
+                            width: { xs: "17px", md: "34px" },
+                            borderRadius: "50%",
+                            fontSize: { xs: "17px", md: "34px" },
+                            color: "#fff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          -
+                        </Typography>
+                      ) : (
+                        <Typography
+                          sx={{
+                            background: "red",
+                            height: { xs: "17px", md: "34px" },
+                            width: { xs: "17px", md: "34px" },
+                            borderRadius: "50%",
+                            fontSize: { xs: "17px", md: "34px" },
+                            color: "#fff",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          +
+                        </Typography>
+                      )
+                    }
+                    sx={{
+                      color: "rgba(25, 34, 39, 1)",
+                      fontWeight: "600",
+                      fontSize: localFontSize.p1,
+                      // lineHeight: localFontSize.h4,
+                      paddingX: "0",
+                      borderRadius: "0",
+                    }}
                   >
-                    {item.content}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
+                    {item.title}
+                  </AccordionSummary>
+                  <AccordionDetails sx={{ paddingX: "0" }}>
+                    <Typography
+                      sx={{ color: "#00000080", fontSize: localFontSize.p2 }}
+                    >
+                      {item.content}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </Box>
             ))}
           </Box>
         </Grid>

@@ -35,14 +35,16 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
         margin: "auto",
 
         background: "#ffffff",
-      }}>
+      }}
+    >
       <Box
         sx={{
           maxWidth: "1536px",
           width: "100%",
 
           textAlign: "center",
-        }}>
+        }}
+      >
         {/* tab */}
         <ToggleButtonGroup
           data-aos="zoom-in"
@@ -57,7 +59,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
             padding: "10px",
             display: "inline-flex",
             gap: "20px",
-          }}>
+          }}
+        >
           <ToggleButton
             value="Manual"
             sx={{
@@ -79,7 +82,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
                 backgroundColor: "#FF191F !important",
                 color: "#ffffff !important",
               },
-            }}>
+            }}
+          >
             {txt1}
           </ToggleButton>
 
@@ -104,7 +108,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
                 backgroundColor: "#FF191F !important",
                 color: "#ffffff !important",
               },
-            }}>
+            }}
+          >
             {txt2}
           </ToggleButton>
         </ToggleButtonGroup>
@@ -114,7 +119,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
           sx={{
             marginTop: "30px",
             margin: "auto",
-          }}>
+          }}
+        >
           {selectedTab === "Manual" ? (
             <Typography
               sx={{
@@ -123,7 +129,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
                 color: "#192227",
                 fontWeight: 500,
                 width: "100%",
-              }}>
+              }}
+            >
               {Component1}
             </Typography>
           ) : (
@@ -133,7 +140,8 @@ function LegalServicesTabs({ txt1, txt2, Component1, Component2 }: TabProps) {
                 fontFamily: "Poppins",
                 // color: "#074592",
                 fontWeight: 500,
-              }}>
+              }}
+            >
               {Component2}
             </Typography>
           )}
