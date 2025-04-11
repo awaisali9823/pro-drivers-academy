@@ -127,8 +127,6 @@ export default function FAQ({ data }: ImmigrationSupportProps) {
           //   item
         >
           <Box
-            data-aos="zoom-in"
-            data-aos-duration="500"
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -140,6 +138,8 @@ export default function FAQ({ data }: ImmigrationSupportProps) {
           >
             {accordionsToRender.map((item, index) => (
               <Accordion
+                data-aos="zoom-in"
+                data-aos-duration="500"
                 key={index}
                 expanded={expanded === `panel${index}`}
                 onChange={handleAccordionChange(`panel${index}`)}

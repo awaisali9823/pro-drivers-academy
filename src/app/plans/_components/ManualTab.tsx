@@ -58,7 +58,8 @@ export default function Manualtab() {
         maxWidth: "1536px",
         width: "100%",
         margin: "auto",
-      }}>
+      }}
+    >
       <Grid
         container
         spacing={3}
@@ -74,7 +75,8 @@ export default function Manualtab() {
             // bgcolor: "#ccc",
           },
           alignItems: "center",
-        }}>
+        }}
+      >
         {pricingPlans.map((plan, index) => {
           const isHovered = hoveredIndex === index;
 
@@ -90,8 +92,11 @@ export default function Manualtab() {
                   md: 310,
                   xl: "400px",
                 },
-              }}>
+              }}
+            >
               <Card
+                data-aos="zoom-in"
+                data-aos-duration="500"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 sx={{
@@ -104,7 +109,8 @@ export default function Manualtab() {
                   cursor: "pointer",
                   transition: "all 0.4s ease",
                   ".MuiCardContent-root": {},
-                }}>
+                }}
+              >
                 <CardContent
                   sx={{
                     p: 4,
@@ -112,7 +118,8 @@ export default function Manualtab() {
                     alignItems: "center",
                     gap: 3,
                     flexDirection: "column",
-                  }}>
+                  }}
+                >
                   <Typography
                     fontWeight="bold"
                     gutterBottom
@@ -125,7 +132,8 @@ export default function Manualtab() {
                       textAlign: "center",
                       textTransform: "capitalize",
                       color: isHovered ? "#fff" : "#192227",
-                    }}>
+                    }}
+                  >
                     {plan.duration}
                   </Typography>
                   <ul
@@ -137,13 +145,15 @@ export default function Manualtab() {
                       alignItems: "center",
 
                       // paddingLeft: "1rem",
-                    }}>
+                    }}
+                  >
                     {plan.features.map((feature, i) => (
                       <li
                         key={i}
                         style={{
                           listStyle: "none",
-                        }}>
+                        }}
+                      >
                         <Box
                           sx={{
                             width: "241px",
@@ -154,7 +164,8 @@ export default function Manualtab() {
                             alignItems: "center",
                             fontFamily: "Poppins",
                             gap: "8px",
-                          }}>
+                          }}
+                        >
                           <Box
                             sx={{
                               width: "8px",
@@ -163,7 +174,8 @@ export default function Manualtab() {
                               bgcolor: isHovered ? "#fff" : "#192227",
                               borderRadius: "50%",
                               transition: "background-color 0.4s ease",
-                            }}></Box>
+                            }}
+                          ></Box>
                           <Typography
                             gutterBottom
                             sx={{
@@ -175,7 +187,8 @@ export default function Manualtab() {
                               letterSpacing: "0%",
                               textTransform: "capitalize",
                               color: isHovered ? "#fff" : "#192227",
-                            }}>
+                            }}
+                          >
                             {feature}
                           </Typography>
                         </Box>
@@ -194,7 +207,8 @@ export default function Manualtab() {
                       fontSize: localFontSize.h1,
                       lineHeight: "100%",
                       letterSpacing: "0%",
-                    }}>
+                    }}
+                  >
                     {plan.price}
                   </Typography>
                   <Button
@@ -218,7 +232,8 @@ export default function Manualtab() {
                         color: "#fff",
                         borderColor: "#FF191F",
                       },
-                    }}>
+                    }}
+                  >
                     Choose Plan
                   </Button>
                 </CardContent>

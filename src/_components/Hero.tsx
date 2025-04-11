@@ -38,11 +38,12 @@ export default function Hero({
           background: "rgba(25, 34, 39, 0.4)",
           backdropFilter: "blur(11.25px)",
           WebkitBackdropFilter: "blur(11.25px)",
-          // margin: "40px auto",
           borderRadius: "45px",
         }}
       >
         <Typography
+          data-aos="fade-right"
+          data-aos-duration="600"
           sx={{
             fontWeight: "700",
             fontSize: localFontSize.h1,
@@ -61,6 +62,8 @@ export default function Hero({
           {heading}
         </Typography>
         <Typography
+          data-aos="fade-left"
+          data-aos-duration="600"
           sx={{
             fontWeight: "400",
             fontSize: localFontSize.p2,

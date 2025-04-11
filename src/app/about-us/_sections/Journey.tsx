@@ -47,6 +47,8 @@ export default function Journey({
         }}
       >
         <Box
+          data-aos={align === "right" ? "fade-right" : "fade-left"}
+          data-aos-duration="500"
           sx={{
             maxWidth: { xs: "650px", xl: "800px" },
             width: "100%",
@@ -60,6 +62,8 @@ export default function Journey({
           />
         </Box>
         <Box
+          data-aos={align === "right" ? "fade-left" : "fade-right"}
+          data-aos-duration="500"
           sx={{
             maxWidth: { xs: "492px", xl: "600px" },
             width: "100%",

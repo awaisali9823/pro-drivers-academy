@@ -16,7 +16,8 @@ export default function PlansSection() {
             md: " 60px 60px 0",
             lg: " 100px 100px 0 ",
           },
-        }}>
+        }}
+      >
         <Box
           sx={{
             margin: "auto",
@@ -24,7 +25,8 @@ export default function PlansSection() {
             height: "auto",
             width: "100%",
             fontFamily: "Poppins",
-          }}>
+          }}
+        >
           <Box
             sx={{
               width: "100%",
@@ -33,7 +35,8 @@ export default function PlansSection() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-            }}>
+            }}
+          >
             <Tab
               txt1="Manual"
               txt2="Automatic"

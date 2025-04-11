@@ -68,7 +68,8 @@ export default function AutomaticTab() {
         maxWidth: { lg: "880px", xl: "1536px" },
         width: "100%",
         margin: "auto",
-      }}>
+      }}
+    >
       <Grid
         container
         spacing={3}
@@ -78,7 +79,8 @@ export default function AutomaticTab() {
           display: "flex",
           justifyContent: { xs: "center", md: "space-between" },
           alignItems: "center",
-        }}>
+        }}
+      >
         {pricingPlans.map((plan, index) => {
           const isHovered = hoveredIndex === index;
 
@@ -89,8 +91,11 @@ export default function AutomaticTab() {
               sx={{
                 width: { lg: "100%" },
                 maxWidth: { xs: 300, sm: 380, md: 400 },
-              }}>
+              }}
+            >
               <Card
+                data-aos="zoom-in"
+                data-aos-duration="500"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 sx={{
@@ -102,7 +107,8 @@ export default function AutomaticTab() {
                   border: "1px solid #eee",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
-                }}>
+                }}
+              >
                 <CardContent sx={{ p: 4 }}>
                   <Typography
                     fontWeight="bold"
@@ -116,7 +122,8 @@ export default function AutomaticTab() {
                       textAlign: "center",
                       textTransform: "capitalize",
                       color: isHovered ? "#fff" : "#192227",
-                    }}>
+                    }}
+                  >
                     {plan.duration}
                   </Typography>
                   <ul
@@ -128,13 +135,15 @@ export default function AutomaticTab() {
                       alignItems: "center",
 
                       // paddingLeft: "1rem",
-                    }}>
+                    }}
+                  >
                     {plan.features.map((feature, i) => (
                       <li
                         key={i}
                         style={{
                           listStyle: "none",
-                        }}>
+                        }}
+                      >
                         <Box
                           sx={{
                             width: "241px",
@@ -145,7 +154,8 @@ export default function AutomaticTab() {
                             alignItems: "center",
                             fontFamily: "Poppins",
                             gap: "6px",
-                          }}>
+                          }}
+                        >
                           <Box
                             sx={{
                               width: "8px",
@@ -155,7 +165,8 @@ export default function AutomaticTab() {
                               bgcolor: isHovered ? "#fff" : "#192227",
                               borderRadius: "50%",
                               transition: "background-color 0.3s ease",
-                            }}></Box>
+                            }}
+                          ></Box>
                           <Typography
                             gutterBottom
                             sx={{
@@ -167,7 +178,8 @@ export default function AutomaticTab() {
                               letterSpacing: "0%",
                               textTransform: "capitalize",
                               color: isHovered ? "#fff" : "#192227",
-                            }}>
+                            }}
+                          >
                             {feature}
                           </Typography>
                         </Box>
@@ -186,7 +198,8 @@ export default function AutomaticTab() {
                       fontSize: localFontSize.h1,
                       lineHeight: "100%",
                       letterSpacing: "0%",
-                    }}>
+                    }}
+                  >
                     {plan.price}
                   </Typography>
                   <Button
@@ -211,7 +224,8 @@ export default function AutomaticTab() {
                         color: "#fff",
                         borderColor: "#FF191F",
                       },
-                    }}>
+                    }}
+                  >
                     Choose Plan
                   </Button>
                 </CardContent>
