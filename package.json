@@ -16,9 +16,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.55.0",
+<<<<<<< HEAD
     "react-slick": "^0.30.3",
     "sharp": "^0.34.1",
     "slick-carousel": "^1.8.1"
+=======
+    "react-toastify": "^11.0.5",
+    "sharp": "^0.34.1"
+>>>>>>> 5692d8de53ceac9ee3d0374cebbdd7b181c7ddc4
   },
   "devDependencies": {
     "@types/node": "^20",
