@@ -2,6 +2,8 @@
 import React from "react";
 import { Button, SxProps, Theme, CircularProgress } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
+import Image from "next/image";
+import svgs from "@/_assets/svgs";
 
 type CustomButtonProps = {
   onClick?: () => void;
@@ -9,6 +11,7 @@ type CustomButtonProps = {
   sx?: SxProps<Theme>;
   loading?: boolean;
   type?: "button" | "submit" | "reset";
+  arrow?: boolean;
 };
 
 function CustomButton({
@@ -17,6 +20,7 @@ function CustomButton({
   sx,
   loading = false,
   type = "button",
+  arrow = false,
 }: CustomButtonProps) {
   return (
     <Button
@@ -49,6 +53,9 @@ function CustomButton({
         />
       ) : (
         btnText
+      )}
+      {arrow && (
+        <Image style={{ width: "15px" }} src={svgs.arrow} alt="arrow" />
       )}
     </Button>
   );
