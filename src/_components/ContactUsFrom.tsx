@@ -44,24 +44,14 @@ export default function ContactUsForm() {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: FormData) => {
-    if (
-      !data.fullName ||
-      !data.email ||
-      !data.phone ||
-      !data.package ||
-      !data.message
-    ) {
-      toast.error("Please fill all required fields.");
-      return;
-    }
-
     try {
       setLoading(true);
-      // Replace with API call if needed
+      // Simulate API call or processing
       toast.success("Form submitted successfully!");
       reset();
-      setSelectedPackage(""); // Reset dropdown too
+      setSelectedPackage("");
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       toast.error("Submission failed! Please try again.");
@@ -77,7 +67,7 @@ export default function ContactUsForm() {
   const handleChange = (event: SelectChangeEvent) => {
     const value = event.target.value;
     setSelectedPackage(value);
-    setValue("package", value);
+    setValue("package", value, { shouldValidate: true });
   };
 
   return (
@@ -139,6 +129,7 @@ export default function ContactUsForm() {
               error={!!errors.fullName}
               helperText={errors.fullName?.message}
             />
+
             <StandardInput
               inputType="email"
               label="Email Address"
@@ -152,6 +143,7 @@ export default function ContactUsForm() {
               error={!!errors.email}
               helperText={errors.email?.message}
             />
+
             <StandardInput
               inputType="number"
               label="Phone Number"
@@ -165,6 +157,7 @@ export default function ContactUsForm() {
               error={!!errors.phone}
               helperText={errors.phone?.message}
             />
+
             <FormControl fullWidth error={!!errors.package}>
               <InputLabel
                 id="dropdown-label"
@@ -211,6 +204,7 @@ export default function ContactUsForm() {
               </Select>
               <FormHelperText>{errors.package?.message}</FormHelperText>
             </FormControl>
+
             <StandardInput
               rows={6}
               inputType="text"
@@ -220,6 +214,7 @@ export default function ContactUsForm() {
               helperText={errors.message?.message}
             />
           </Box>
+
           <CustomButton
             type="submit"
             btnText="Send"
