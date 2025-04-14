@@ -54,36 +54,37 @@ export default function PopularCourses() {
           </Typography>
         </Box>
         {/* cards not for moble but for the rest of other screens */}
-        <Grid
-          spacing={3}
-          sx={{
-            justifyContent: "space-between",
-            rowGap: "50px",
-            display: { xs: "none", sm: "block" },
-          }}
-          container
-        >
+        <Box sx={{ display: { xs: "none", sm: "block" }, width: "100%" }}>
           <Grid
-            sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
-            size={{ xs: 12, md: 6 }}
+            spacing={3}
+            sx={{
+              justifyContent: "space-between",
+              rowGap: "50px",
+            }}
+            container
           >
-            <PopularCoursesCard
-              title="Auto & Manual Lessons"
-              subtitle="PopularCourses"
-              image={pngs.autoAndManual}
-            />
+            <Grid
+              sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
+              size={{ xs: 12, md: 6 }}
+            >
+              <PopularCoursesCard
+                title="Auto & Manual Lessons"
+                subtitle="PopularCourses"
+                image={pngs.autoAndManual}
+              />
+            </Grid>
+            <Grid
+              sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
+              size={{ xs: 12, md: 6 }}
+            >
+              <PopularCoursesCard
+                title="Auto & Manual Lessons"
+                subtitle="PopularCourses"
+                image={pngs.autoAndManual}
+              />
+            </Grid>
           </Grid>
-          <Grid
-            sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
-            size={{ xs: 12, md: 6 }}
-          >
-            <PopularCoursesCard
-              title="Auto & Manual Lessons"
-              subtitle="PopularCourses"
-              image={pngs.autoAndManual}
-            />
-          </Grid>
-        </Grid>
+        </Box>
         {/* slider for mobile screens */}
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <Slider {...settings}>
