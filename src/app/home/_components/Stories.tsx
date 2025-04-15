@@ -113,7 +113,6 @@ export default function Stories() {
             >
               <Typography
                 sx={{
-                  // maxWidth: { xs: 361, sm: "800", lg: "392px" },
                   width: "100%",
                   fontWeight: "700",
                   fontSize: localFontSize.h2,
@@ -128,7 +127,6 @@ export default function Stories() {
               </Typography>
               <Typography
                 sx={{
-                  // maxWidth: { xs: 361, sm: "800", lg: "392px" },
 
                   width: "100%",
                   fontWeight: "400",
