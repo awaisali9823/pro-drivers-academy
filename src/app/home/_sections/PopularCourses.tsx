@@ -12,12 +12,22 @@ export default function PopularCourses() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    customPaging: () => (
+      <div
+        style={{
+          width: "20px",
+          height: "20px",
+          borderRadius: "50%",
+          backgroundColor: "#D9D9D9",
+        }}
+      />
+    ),
   };
   return (
     <Box
       sx={{
         padding: {
-          xs: "40px 10px",
+          xs: "40px 10px 60px 10px",
           sm: "60px 40px",
           md: "80px 60px",
           lg: "100px",
@@ -92,12 +102,12 @@ export default function PopularCourses() {
               sx={{
                 paddingX: { xs: "10px", sm: "0" },
                 width: "100%",
-                paddingBottom: { xs: "20px", sm: "0" },
+                paddingBottom: { xs: "40px", sm: "0" },
               }}
             >
               <PopularCoursesCard
                 title="Auto & Manual Lessons"
-                subtitle="PopularCourses"
+                subtitle="We offer automatic and manual lessons at affordable prices."
                 image={pngs.autoAndManual}
               />
             </Box>
@@ -105,13 +115,13 @@ export default function PopularCourses() {
               sx={{
                 paddingX: { xs: "10px", sm: "0" },
                 width: "100%",
-                paddingBottom: { xs: "20px", sm: "0" },
+                paddingBottom: { xs: "40px", sm: "0" },
               }}
             >
               <PopularCoursesCard
-                title="Auto & Manual Lessons"
-                subtitle="PopularCourses"
-                image={pngs.autoAndManual}
+                title="Theory Test Pro"
+                subtitle="Sign-up theory test pro for Free!"
+                image={pngs.theoryTest}
               />
             </Box>
           </Slider>
