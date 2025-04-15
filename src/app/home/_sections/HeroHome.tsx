@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import pngs from "@/_assets/pngs";
@@ -10,7 +11,7 @@ export default function HomePage() {
     <Box
       sx={{
         padding: {
-          xs: "0 20px 40px 0",
+          xs: "0 20px 40px 20px",
           sm: "0 60px 60px 0",
           lg: " 0 100px 80px 0",
           xl: "0 100px 80px 100px",
@@ -29,11 +30,13 @@ export default function HomePage() {
         <Grid
           data-aos="fade-right"
           data-aos-duration="500"
-          sx={{}}
+          sx={{ justifyContent: { xs: "center", sm: "unset" } }}
           size={{ xs: 12, md: 6 }}
         >
+          {/* desktop or tab image  */}
           <Box
             sx={{
+              display: { xs: "none", sm: "block" },
               position: "relative",
               maxWidth: { xs: "480px", md: "680px" },
               width: "100%",
@@ -45,33 +48,51 @@ export default function HomePage() {
               alt="heroHome"
             />
           </Box>
+          {/* mobile image */}
+          <Box
+            sx={{
+              display: { xs: "block", sm: "none" },
+              position: "relative",
+              maxWidth: { xs: "480px", md: "680px" },
+              width: "100%",
+              margin: "auto",
+            }}
+          >
+            <Image
+              style={{ height: "100%", width: "100%", objectFit: "contain" }}
+              src={pngs.heroHomeMobile}
+              alt="heroHome"
+            />
+          </Box>
         </Grid>
         <Grid
           data-aos="fade-left"
           data-aos-duration="500"
           sx={{
             padding: {
-              xs: "20px 0 0 20px",
-              sm: "20px 0",
+              xs: "0px 0 0 0px",
+              sm: "0px 0",
               md: "20px 0",
               lg: "20px 0",
               xl: "20px 0px",
             },
+            width: "100%",
           }}
           size={{ xs: 12, md: 6 }}
         >
           <Box
             sx={{
-              textAlign: "right",
+              textAlign: { xs: "center", sm: "right" },
               display: "flex",
               flexDirection: "column",
-              alignItems: "flex-end",
+              alignItems: { xs: "center", sm: "flex-end" },
               maxWidth: {
                 xs: "320px",
                 sm: "400px",
                 lg: "535px",
               },
-              float: "right",
+              float: { sm: "right" },
+              margin: "auto",
             }}
           >
             <Typography
