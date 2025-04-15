@@ -94,8 +94,8 @@ export default function Stories() {
               display: "flex",
               flexWrap: { xs: "wrap", lg: "nowrap" },
               flexDirection: "row",
-              justifyContent: { sm: "center", lg: "space-between" },
-              alignItems: { xs: "start", sm: "center", lg: "start" },
+              justifyContent: { xs: "center", lg: "space-between" },
+              alignItems: { xs:  "center", lg: "start" },
               gap: { xs: 4, sm: 6, md: 3 },
             }}
           >
@@ -105,7 +105,7 @@ export default function Stories() {
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
-                // justifyContent: "center",
+                justifyContent: "center",
                 alignItems: { xs: "center", lg: "start" },
                 fontFamily: "Poppins",
                 gap: { xs: 2, md: 3 },
@@ -152,9 +152,9 @@ export default function Stories() {
                 display: "flex",
                 flexWrap: { xs: "wrap", lg: "nowrap" },
                 justifyContent: {
+
                   xs: "space-between",
                 },
-
                 alignItems: "start",
                 gap: 3,
               }}
