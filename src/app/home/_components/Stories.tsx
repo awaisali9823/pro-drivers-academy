@@ -1,5 +1,5 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 import pngs from "@/_assets/pngs/index";
 import React from "react";
@@ -7,36 +7,41 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "@/app/reviews/_components/Card";
+import Image from "next/image";
 
 export default function Stories() {
   const reviewData = [
     {
       id: 1,
-      name: "Lexi James",
-      imgSrc: pngs.lexi,
+      name: "James Carter",
+      imgSrc: pngs.james,
+      text:"University Student",
       description:
         "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
     },
     {
       id: 2,
+      name: "Jordie Stokes",
+      imgSrc: pngs.sophie,
+        text:"University Student",
+      description:
+        "I was nervous about driving, but the structured lessons and expert guidance gave me confidence. Now, I feel safe and in control on the road!",
+    },
+    {
+      id: 3,
       name: "Monica Baldwin",
-      imgSrc: pngs.monica,
+      imgSrc: pngs.james,
+        text:"University Student",
       description:
         "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
     },
     {
       id: 3,
       name: "Jordie Stokes",
-      imgSrc: pngs.jordie,
+      imgSrc: pngs.sophie,
+        text:"University Student",
       description:
-        "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
-    },
-    {
-      id: 3,
-      name: "Jordie Stokes",
-      imgSrc: pngs.jordie,
-      description:
-        "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
+        "I was nervous about driving, but the structured lessons and expert guidance gave me confidence. Now, I feel safe and in control on the road!",
     },
   ];
   const settings = {
@@ -47,11 +52,15 @@ export default function Stories() {
     slidesToScroll: 2,
 
     responsive: [
-      {
+       {
         breakpoint: 600, // For mobile devices
         settings: {
-          slidesToShow: 1, // Show 1 slide at a time
+          slidesToShow:1, // Show 1 slide at a time
           slidesToScroll: 1, // Scroll 1 slide at a time
+         rows:2,
+        // vertical: true, // makes slider vertical
+        verticalSwiping: true, 
+        
         },
       },
     ],
@@ -97,7 +106,7 @@ export default function Stories() {
                 display: "flex",
                 flexDirection: "column",
                 // justifyContent: "center",
-                alignItems: { xs: "start", sm: "center", lg: "start" },
+                alignItems: { xs: "center", lg: "start" },
                 fontFamily: "Poppins",
                 gap: { xs: 2, md: 3 },
               }}
@@ -110,7 +119,7 @@ export default function Stories() {
                   fontSize: localFontSize.h2,
                   lineHeight: { xs: "40px", md: "60px" },
                   letterSpacing: "0%",
-                  textAlign: { xs: "start", sm: "center", lg: "start" },
+                  textAlign: { xs: "center", lg: "start" },
                   textTransform: "capitalize",
                   color: "#192227",
                 }}
@@ -123,16 +132,15 @@ export default function Stories() {
 
                   width: "100%",
                   fontWeight: "400",
-                  fontSize: localFontSize.p1,
+                  fontSize: localFontSize.p2,
                   lineHeight: "25px",
                   letterSpacing: "0%",
-                  textAlign: { xs: "start", sm: "center", lg: "start" },
+                  textAlign: { xs: "center", lg: "start" },
 
                   color: "#19222780",
                 }}
               >
-                Hear from our students who mastered the road with Pro Drive
-                Academy. Real stories, real success – your journey starts here!
+                Hear from our students who mastered the road with Pro Drive Academy. Real stories, real success – your journey starts here!
               </Typography>
             </Box>
 
@@ -157,7 +165,7 @@ export default function Stories() {
                     <Box
                       key={index}
                       sx={{
-                        px: { sm: 1.5 }, // horizontal space between slides (e.g. 12px)
+                        p: { xs: 1.5 }, // horizontal space between slides (e.g. 12px)
                         // boxSizing: "border-box",
                       }}
                     >
@@ -174,14 +182,70 @@ export default function Stories() {
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "start",
+                          textAlign:"left"
                         }}
                       >
-                        <Card
-                          key={data.id}
-                          imgSrc={data.imgSrc}
-                          desc={data.description}
-                          name={data.name}
-                        ></Card>
+
+                        <Box>
+                                            <Box
+                                              sx={{
+                                                background: "rgba(25,34,39,1)",
+                                                maxWidth: { xs: "600px", xl: "745px" },
+                                                width: "100%",
+                                                borderRadius: "22px",
+                                                padding: "30px",
+                                              }}
+                                            >
+                                              <Box
+                                                sx={{
+                                                  display: "flex",
+                                                  alignItems: "center",
+                                                  gap: "10px",
+                                                }}
+                                              >
+                                                <Image src={data.imgSrc} alt={data.name} height={49} width={49} />
+                                                <Box>
+                                                  <Typography
+                                                    sx={{
+                                                      fontWeight: "600",
+                                                      fontSize: localFontSize.p1,
+                                                      color: "#fff",
+                                                    }}
+                                                  >
+                                                    {data.name}
+                                                  </Typography>
+                                                  <Box
+                                                    sx={{
+                                                      display: "flex",
+                                                      alignItems: "center",
+                                                    }}
+                                              >
+                                                    <Typography
+                                                    sx={{
+                                                      fontWeight: "400",
+                                                      fontSize:"11px",
+                                                      color: "#fff",
+                                                    }}
+                                                  >
+                                                    {data.text}
+                                                  </Typography>
+
+                                                  </Box>
+                                                </Box>
+                                              </Box>
+                                              <Typography
+                                                sx={{
+                                                  fontWeight: "400",
+                                                  fontSize: localFontSize.p1,
+                                                  color: "rgba(255,255,255,0.5)",
+                                                  marginTop: "15px",
+                                                }}
+                                              >     
+                                                {data.description}
+                                              </Typography>
+                                            </Box>
+                                          </Box>
+                       
                       </Box>
                     </Box>
                   ))}

@@ -46,7 +46,7 @@ export default function AreasSection() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              gap: 8,
+              gap: {xs:4,md:8},
             }}
           >
             {" "}
@@ -62,8 +62,7 @@ export default function AreasSection() {
                 color: "#19222780",
               }}
             >
-              We provide expert driving lessons across Rotherham and Sheffield,
-              helping learners gain confidence and pass their test with ease.
+                  We provide expert driving lessons across Rotherham and Sheffield, helping learners gain confidence and pass their test with ease.
             </Typography>
             <Box
               sx={{
@@ -74,6 +73,7 @@ export default function AreasSection() {
                 justifyContent: { xs: "center", md: "space-between" },
 
                 alignItems: "center",
+                gap:4
               }}
             >
               {AreasdataOflocation.map((items, index) => {
@@ -95,14 +95,14 @@ export default function AreasSection() {
                         xl: "605px",
                       },
                       borderRadius: "30px",
-                      gap: 5,
+                      gap: 4  ,
 
                       boxShadow: "0px 6px 20px rgba(0,0,0,0.05)",
                     }}
                   >
                     <Box
                       sx={{
-                        height: { xs: "360px", lg: "466px" },
+                        height: { xs: "278px", sm:330, lg: "466px" },
                         maxWidth: {
                           xs: "440px",
                           md: "500px",
@@ -113,6 +113,8 @@ export default function AreasSection() {
                         backgroundColor: "#f9f9f9",
                         borderRadius: "30px",
                         overflow: "hidden",
+                        border: "2px solid #FF191F"
+                        
                       }}
                     >
                       <iframe
@@ -140,10 +142,26 @@ export default function AreasSection() {
                         {items.text}
                       </Typography>
                     </Box>
+                  
+
+                    
                   </Box>
                 );
               })}
+               
             </Box>
+             <Box>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          fontSize: localFontSize.p2,
+                          color: "#FF191F",
+                          // py: 3,
+                        }}
+                      >
+                        *Note: Our Timings Are 8AM - 9 PM
+                      </Typography>
+                    </Box>
           </Box>
         </Box>
       </Box>
