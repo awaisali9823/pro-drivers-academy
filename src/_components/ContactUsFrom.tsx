@@ -7,22 +7,74 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
+  FormHelperText,
 } from "@mui/material";
 import StandardInput from "./StandardInput";
 import { localFontSize } from "@/utils/themes";
 import CustomButton from "./CustomButton";
-export default function ContactUsFrom() {
-  const [age, setAge] = useState("");
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  package: string;
+  message: string;
+}
+
+export default function ContactUsForm() {
+  const [loading, setLoading] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    reset,
+  } = useForm<FormData>({
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      package: "",
+      message: "",
+    },
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onSubmit = async (data: FormData) => {
+    try {
+      setLoading(true);
+      // Simulate API call or processing
+      toast.success("Form submitted successfully!");
+      reset();
+      setSelectedPackage("");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (err) {
+      toast.error("Submission failed! Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onError = () => {
+    toast.error("Please fill all required fields correctly.");
+  };
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    const value = event.target.value;
+    setSelectedPackage(value);
+    setValue("package", value, { shouldValidate: true });
   };
 
   return (
     <Box
       sx={{
         padding: {
-          xs: " 40px 20px",
+          xs: "40px 20px",
           sm: "40px 40px",
           md: "50px 60px",
           lg: "80px 100px",
@@ -56,7 +108,10 @@ export default function ContactUsFrom() {
           ></iframe>
         </Box>
 
-        <Box sx={{ width: "100%" }}>
+        <form
+          onSubmit={handleSubmit(onSubmit, onError)}
+          style={{ width: "100%" }}
+        >
           <Box
             data-aos="fade-left"
             data-aos-duration="500"
@@ -67,10 +122,43 @@ export default function ContactUsFrom() {
               gap: { xs: "12px", md: "22px" },
             }}
           >
-            <StandardInput inputType="text" label="Full Name" />
-            <StandardInput inputType="email" label="Email Address" />
-            <StandardInput inputType="number" label="Phone Number" />
-            <FormControl fullWidth>
+            <StandardInput
+              inputType="text"
+              label="Full Name"
+              {...register("fullName", { required: "Full name is required" })}
+              error={!!errors.fullName}
+              helperText={errors.fullName?.message}
+            />
+
+            <StandardInput
+              inputType="email"
+              label="Email Address"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^\S+@\S+\.\S+$/,
+                  message: "Invalid email address",
+                },
+              })}
+              error={!!errors.email}
+              helperText={errors.email?.message}
+            />
+
+            <StandardInput
+              inputType="number"
+              label="Phone Number"
+              {...register("phone", {
+                required: "Phone number is required",
+                pattern: {
+                  value: /^[0-9]+$/,
+                  message: "Phone number must contain digits only",
+                },
+              })}
+              error={!!errors.phone}
+              helperText={errors.phone?.message}
+            />
+
+            <FormControl fullWidth error={!!errors.package}>
               <InputLabel
                 id="dropdown-label"
                 sx={{
@@ -82,13 +170,13 @@ export default function ContactUsFrom() {
                   },
                 }}
               >
-                select driving lesson package
+                Select driving lesson package
               </InputLabel>
               <Select
                 labelId="dropdown-label"
                 id="dropdown"
-                value={age}
-                label="Age"
+                value={selectedPackage}
+                label="Package"
                 onChange={handleChange}
                 sx={{
                   borderRadius: "34px",
@@ -109,18 +197,31 @@ export default function ContactUsFrom() {
                   },
                 }}
               >
-                <MenuItem value={10}>select driving lesson package</MenuItem>
-                <MenuItem value={20}>select driving lesson package</MenuItem>
-                <MenuItem value={30}>select driving lesson package</MenuItem>
+                <MenuItem value="">Select Package</MenuItem>
+                <MenuItem value="basic">Basic Package</MenuItem>
+                <MenuItem value="standard">Standard Package</MenuItem>
+                <MenuItem value="premium">Premium Package</MenuItem>
               </Select>
+              <FormHelperText>{errors.package?.message}</FormHelperText>
             </FormControl>
-            <StandardInput rows={6} inputType="text" label="Message" />
+
+            <StandardInput
+              rows={6}
+              inputType="text"
+              label="Message"
+              {...register("message", { required: "Message is required" })}
+              error={!!errors.message}
+              helperText={errors.message?.message}
+            />
           </Box>
+
           <CustomButton
+            type="submit"
             btnText="Send"
             sx={{ width: "140px", marginTop: { xs: "30px", md: "45px" } }}
+            loading={loading}
           />
-        </Box>
+        </form>
       </Box>
     </Box>
   );

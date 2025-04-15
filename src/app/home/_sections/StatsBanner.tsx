@@ -29,7 +29,7 @@ export default function StatsBanner() {
           rowGap: "50px",
           columnGap: "30px",
           flexWrap: "wrap",
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: "row", sm: "row" },
           maxWidth: "1200px",
           margin: "auto",
         }}

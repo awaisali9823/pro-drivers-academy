@@ -1,15 +1,33 @@
 import { localFontSize } from "@/utils/themes";
 import { Box, Typography, Grid } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
 import pngs from "@/_assets/pngs";
-import CustomButton from "@/_components/CustomButton";
+import PopularCoursesCard from "../_components/PopularCoursesCard";
+import React from "react";
+import Slider from "react-slick";
 
 export default function PopularCourses() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    customPaging: () => (
+      <div
+        style={{
+          width: "20px",
+          height: "20px",
+          borderRadius: "50%",
+          backgroundColor: "#D9D9D9",
+        }}
+      />
+    ),
+  };
   return (
     <Box
       sx={{
         padding: {
-          xs: "40px 20px",
+          xs: "40px 10px 60px 10px",
           sm: "60px 40px",
           md: "80px 60px",
           lg: "100px",
@@ -23,6 +41,7 @@ export default function PopularCourses() {
             maxWidth: "600px",
             margin: "auto",
             paddingBottom: { xs: "40px", md: "80px" },
+            paddingX: { xs: "10px", sm: "unset" },
           }}
         >
           <Typography
@@ -44,103 +63,70 @@ export default function PopularCourses() {
             beginners to experienced drivers looking to refine their skills.
           </Typography>
         </Box>
-        <Grid
-          spacing={3}
-          sx={{ justifyContent: "space-between", rowGap: "50px" }}
-          container
-        >
+        {/* cards not for moble but for the rest of other screens */}
+        <Box sx={{ display: { xs: "none", sm: "block" }, width: "100%" }}>
           <Grid
-            sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
-            size={{ xs: 12, md: 6 }}
-          >
-            <LessonCard
-              title="Auto & Manual Lessons"
-              subtitle="PopularCourses"
-              image={pngs.autoAndManual}
-            />
-          </Grid>
-          <Grid
-            sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
-            size={{ xs: 12, md: 6 }}
-          >
-            <LessonCard
-              title="Auto & Manual Lessons"
-              subtitle="PopularCourses"
-              image={pngs.autoAndManual}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-    </Box>
-  );
-}
-
-interface LessonCardProps {
-  title: string;
-  subtitle: string;
-  image: StaticImageData;
-}
-
-export const LessonCard: React.FC<LessonCardProps> = ({
-  title,
-  subtitle,
-  image,
-}) => {
-  return (
-    <Box
-      data-aos="zoom-in"
-      data-aos-duration="500"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        margin: "auto",
-        maxWidth: "650px",
-      }}
-    >
-      <Box
-        sx={{
-          height: "auto",
-          maxWidth: "650px",
-          width: "100%",
-          aspectRatio: "605 / 466",
-          borderRadius: "35px",
-          overflow: "hidden",
-        }}
-      >
-        <Image
-          style={{ height: "100%", width: "100%", objectFit: "cover" }}
-          src={image}
-          alt={title}
-        />
-      </Box>
-      <Box sx={{ paddingTop: { xs: "30px", md: "40px", xl: "60px" } }}>
-        <Box>
-          <Typography
+            spacing={3}
             sx={{
-              fontSize: localFontSize.h4,
-              lineHeight: localFontSize.h4,
-              color: "#192227",
+              justifyContent: "space-between",
+              rowGap: "50px",
             }}
+            container
           >
-            {title}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: localFontSize.p1,
-              lineHeight: localFontSize.p1,
-              color: "#19222780",
-              paddingTop: { xs: "12px", md: "15px", xl: "20px" },
-            }}
-          >
-            {subtitle}
-          </Typography>
+            <Grid
+              sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
+              size={{ xs: 12, md: 6 }}
+            >
+              <PopularCoursesCard
+                title="Auto & Manual Lessons"
+                subtitle="PopularCourses"
+                image={pngs.autoAndManual}
+              />
+            </Grid>
+            <Grid
+              sx={{ maxWidth: "650px", margin: { xs: "auto", md: "unset" } }}
+              size={{ xs: 12, md: 6 }}
+            >
+              <PopularCoursesCard
+                title="Auto & Manual Lessons"
+                subtitle="PopularCourses"
+                image={pngs.autoAndManual}
+              />
+            </Grid>
+          </Grid>
         </Box>
-        <CustomButton
-          btnText="Learn More"
-          arrow={true}
-          sx={{ marginTop: { xs: "20px", md: "30px", xl: "40px" } }}
-        />
+        {/* slider for mobile screens */}
+        <Box sx={{ display: { xs: "block", sm: "none" } }}>
+          <Slider {...settings}>
+            <Box
+              sx={{
+                paddingX: { xs: "10px", sm: "0" },
+                width: "100%",
+                paddingBottom: { xs: "40px", sm: "0" },
+              }}
+            >
+              <PopularCoursesCard
+                title="Auto & Manual Lessons"
+                subtitle="We offer automatic and manual lessons at affordable prices."
+                image={pngs.autoAndManual}
+              />
+            </Box>
+            <Box
+              sx={{
+                paddingX: { xs: "10px", sm: "0" },
+                width: "100%",
+                paddingBottom: { xs: "40px", sm: "0" },
+              }}
+            >
+              <PopularCoursesCard
+                title="Theory Test Pro"
+                subtitle="Sign-up theory test pro for Free!"
+                image={pngs.theoryTest}
+              />
+            </Box>
+          </Slider>
+        </Box>
       </Box>
     </Box>
   );
-};
+}

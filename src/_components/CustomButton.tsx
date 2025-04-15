@@ -1,6 +1,7 @@
 "use client";
+import React from "react";
+import { Button, SxProps, Theme, CircularProgress } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
-import { Button, SxProps, Theme } from "@mui/material";
 import Image from "next/image";
 import svgs from "@/_assets/svgs";
 
@@ -8,6 +9,8 @@ type CustomButtonProps = {
   onClick?: () => void;
   btnText: string;
   sx?: SxProps<Theme>;
+  loading?: boolean;
+  type?: "button" | "submit" | "reset";
   arrow?: boolean;
 };
 
@@ -15,10 +18,13 @@ function CustomButton({
   onClick = () => {},
   btnText,
   sx,
+  loading = false,
+  type = "button",
   arrow = false,
 }: CustomButtonProps) {
   return (
     <Button
+      type={type}
       variant="outlined"
       onClick={onClick}
       sx={{
@@ -39,7 +45,15 @@ function CustomButton({
         ...sx,
       }}
     >
-      {btnText}{" "}
+      {loading ? (
+        <CircularProgress
+          size={24}
+          color="inherit"
+          sx={{ marginRight: "8px" }}
+        />
+      ) : (
+        btnText
+      )}
       {arrow && (
         <Image style={{ width: "15px" }} src={svgs.arrow} alt="arrow" />
       )}

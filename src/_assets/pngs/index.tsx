@@ -28,6 +28,7 @@ import applyForLicense from "./applyForLicense.png";
 import bgLetsGetStarted from "./bgLetsGetStarted.png";
 import sophie from "./sophie.png";
 import james from "./james.png";
+import heroHomeMobile from "./heroHomeMobile.png";
 
 const pngs = {
   heroHome,
@@ -60,6 +61,7 @@ const pngs = {
   ourProundGimg2,
   applyForLicense,
   bgLetsGetStarted,
+  heroHomeMobile,
 };
 
 export default pngs;
