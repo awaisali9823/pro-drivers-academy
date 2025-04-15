@@ -69,8 +69,8 @@ export default function AreasSection() {
                 width: "100%",
                 maxWidth: 1536,
                 display: "flex",
-                flexWrap: "wrap",
-                justifyContent: { xs: "center", md: "space-between" },
+                flexWrap: {xs:"wrap",md:"nowrap"},
+                justifyContent: { xs: "center", lg:"space-between"},
 
                 alignItems: "center",
                 gap:4
@@ -85,15 +85,11 @@ export default function AreasSection() {
                     sx={{
                       width: "100%",
                       display: "flex",
-                      justifyContent: "space-between",
+                      justifyContent: {xs:"center",},
                       alignItems: "center",
                       flexDirection: "column",
-                      maxWidth: {
-                        xs: "440px",
-                        md: "390px",
-                        lg: "500px",
-                        xl: "605px",
-                      },
+                     
+                      maxWidth:"605px",
                       borderRadius: "30px",
                       gap: 4  ,
 
@@ -102,18 +98,15 @@ export default function AreasSection() {
                   >
                     <Box
                       sx={{
-                        height: { xs: "278px", sm:330, lg: "466px" },
-                        maxWidth: {
-                          xs: "440px",
-                          md: "500px",
-                          lg: "550px",
-                          xl: "605px",
-                        },
+                        height: { xs: "278px", sm:"390px", lg: "466px" },
+                   
+                      maxWidth:"605px",
+
                         width: "100%",
                         backgroundColor: "#f9f9f9",
                         borderRadius: "30px",
                         overflow: "hidden",
-                        border: "2px solid #FF191F"
+                        border:{xs:"2px solid #FF191F",md: "4px solid #FF191F"}
                         
                       }}
                     >
