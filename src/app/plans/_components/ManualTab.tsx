@@ -82,6 +82,8 @@ export default function Manualtab() {
 
           return (
             <Grid
+               data-aos="zoom-in"
+                data-aos-duration="500"
               size={{ xs: 12, sm: 6, md: 4 }}
               key={index}
               sx={{
@@ -95,8 +97,7 @@ export default function Manualtab() {
               }}
             >
               <Card
-                data-aos="zoom-in"
-                data-aos-duration="500"
+               
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 sx={{

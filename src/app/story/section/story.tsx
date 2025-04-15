@@ -61,7 +61,6 @@ export default function StorySection() {
               <Typography
                 sx={{
                   maxWidth: { xs: 361, md: "526px" },
-
                   fontWeight: "700",
                   fontSize: localFontSize.h2,
                   lineHeight: { xs: "40px", md: "60px" },
@@ -70,7 +69,7 @@ export default function StorySection() {
                   textTransform: "capitalize",
                   color: "#192227",
                 }}>
-                Real journey, real success!
+                Real journey, real Story!
               </Typography>
               <Typography
                 sx={{

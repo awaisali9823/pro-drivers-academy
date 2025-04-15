@@ -26,10 +26,14 @@ import ourProundGimg2 from "./ourProundGimg2.png";
 import ourProundGimg1 from "./ourProundGimg1.png";
 import applyForLicense from "./applyForLicense.png";
 import bgLetsGetStarted from "./bgLetsGetStarted.png";
+import sophie from "./sophie.png";
+import james from "./james.png";
 import heroHomeMobile from "./heroHomeMobile.png";
 
 const pngs = {
   heroHome,
+  james,
+  sophie,
   storycardImage1,
   storycardImage2,
   storycardImage3,

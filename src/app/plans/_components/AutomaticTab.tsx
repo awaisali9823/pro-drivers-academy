@@ -90,12 +90,12 @@ export default function AutomaticTab() {
               key={index}
               sx={{
                 width: { lg: "100%" },
-                maxWidth: { xs: 300, sm: 380, md: 400 },
+                maxWidth: { xs: 300, sm: 380,},
               }}
             >
               <Card
-                data-aos="zoom-in"
-                data-aos-duration="500"
+                // data-aos="zoom-in"
+                // data-aos-duration="500"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 sx={{
@@ -203,8 +203,6 @@ export default function AutomaticTab() {
                     {plan.price}
                   </Typography>
                   <Button
-                    // fullWidth
-
                     variant="outlined"
                     sx={{
                       maxWidth: "219px",

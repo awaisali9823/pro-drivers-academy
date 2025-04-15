@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 
 export default function Navbar() {
   const router = useRouter();
+
   const pathname = usePathname();
   const getColor = (route: string) =>
     pathname === route ? "#FF191F" : "#19222780";
@@ -46,8 +47,7 @@ export default function Navbar() {
             md: "20px 60px",
             lg: "20px 100px",
           },
-        }}
-      >
+        }}>
         <Box
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -58,8 +58,7 @@ export default function Navbar() {
             maxWidth: "1536px",
             width: "100%",
             margin: "auto",
-          }}
-        >
+          }}>
           {/* logo box  */}
           <Box
             onClick={() => router.push("/")}
@@ -67,8 +66,7 @@ export default function Navbar() {
               maxWidth: { xs: "130px ", md: "150px", xl: "200px" },
               width: "100%",
               cursor: "pointer",
-            }}
-          >
+            }}>
             <Image
               style={{ height: "100%", width: "100%", objectFit: "contain" }}
               src={svgs.logoWhite}
@@ -89,22 +87,19 @@ export default function Navbar() {
                   color: "#FF191F",
                 },
               },
-            }}
-          >
+            }}>
             {navLinks.map((link, index) => (
               <Typography
                 key={index}
                 onClick={() => router.push(link.route)}
-                style={{ cursor: "pointer", color: getColor(link.route) }}
-              >
+                style={{ cursor: "pointer", color: getColor(link.route) }}>
                 {link.text}
               </Typography>
             ))}
           </Box>
           <Box
             onClick={() => router.push("/contact-us")}
-            sx={{ display: { xs: "none", md: "block" } }}
-          >
+            sx={{ display: { xs: "none", md: "block" } }}>
             <CustomButton btnText="Contact Us" />
           </Box>
           <Box
@@ -117,8 +112,7 @@ export default function Navbar() {
                   sm: "34px",
                 },
               },
-            }}
-          >
+            }}>
             <Image
               style={{ height: "100%", objectFit: "contain" }}
               src={svgs.hamburger}
@@ -142,14 +136,12 @@ export default function Navbar() {
           textWrap: "nowrap",
           padding: "40px 20px",
           transform: isDrawerOpen ? "translateX(0)" : "translateX(200px)",
-        }}
-      >
+        }}>
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
             justifyContent: "flex-end",
-          }}
-        >
+          }}>
           <Image
             onClick={() => toggleDrawer(false)}
             style={{
@@ -176,8 +168,7 @@ export default function Navbar() {
                 color: "#FF191F",
               },
             },
-          }}
-        >
+          }}>
           {navLinks.map((link, i) => (
             <React.Fragment key={i}>
               <Typography
@@ -189,8 +180,7 @@ export default function Navbar() {
                   textTransform: "capitalize",
                   cursor: "pointer",
                   color: pathname === link.route ? "#FF191F" : "#ffffff",
-                }}
-              >
+                }}>
                 {link.text}
               </Typography>
               <Divider sx={{ border: ".4px solid #fff", width: "100%" }} />
@@ -198,8 +188,7 @@ export default function Navbar() {
           ))}
           <Box
             onClick={() => router.push("/contact-us")}
-            sx={{ margin: "auto", width: "fit-content", paddingTop: "10px" }}
-          >
+            sx={{ margin: "auto", width: "fit-content", paddingTop: "10px" }}>
             <CustomButton btnText="Contact Us" />
           </Box>
         </Box>

@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Passers() {
   const imageData = [
     {
-      image: pngs.ourProundGimg1,
+      image: pngs.ourProundGimg2,
     },
     {
       image: pngs.ourProundGimg1,
@@ -34,8 +34,12 @@ export default function Passers() {
       {
         breakpoint: 600, // For mobile devices
         settings: {
-          slidesToShow: 1, // Show 1 slide at a time
+          slidesToShow:1, // Show 1 slide at a time
           slidesToScroll: 1, // Scroll 1 slide at a time
+         rows:2,
+        // vertical: true, // makes slider vertical
+        verticalSwiping: true, 
+        
         },
       },
     ],
@@ -75,6 +79,8 @@ export default function Passers() {
             <Box
               sx={{
                 maxWidth: { xs: 361, sm: 600, md: "808px" },
+width:"100%",
+
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -85,7 +91,8 @@ export default function Passers() {
             >
               <Typography
                 sx={{
-                  maxWidth: { xs: 361, md: "526px" },
+                  // maxWidth: { xs: 361, md: "526px" },
+                  width: "100%",
 
                   fontWeight: "700",
                   fontSize: localFontSize.h2,
@@ -100,7 +107,8 @@ export default function Passers() {
               </Typography>
               <Typography
                 sx={{
-                  maxWidth: { xs: 361, sm: 500, md: "628px" },
+                  // maxWidth: { xs: 361, sm: 500, md: "628px" },
+width:"100%",
 
                   fontWeight: "400",
                   fontSize: localFontSize.p1,
@@ -135,7 +143,8 @@ export default function Passers() {
                     <Box
                       key={index}
                       sx={{
-                        px: { sm: 1.5 }, // horizontal space between slides (e.g. 12px)
+                       
+                        p: { xs: 1.5 }, // horizontal space between slides (e.g. 12px)
                         boxSizing: "border-box",
                       }}
                     >
