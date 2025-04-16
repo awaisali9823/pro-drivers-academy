@@ -1,12 +1,11 @@
 "use client";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { localFontSize } from "@/utils/themes";
 import pngs from "@/_assets/pngs/index";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Card from "@/app/reviews/_components/Card";
 import Image from "next/image";
 
 export default function Stories() {
@@ -15,7 +14,7 @@ export default function Stories() {
       id: 1,
       name: "James Carter",
       imgSrc: pngs.james,
-      text:"University Student",
+      text: "University Student",
       description:
         "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
     },
@@ -23,7 +22,7 @@ export default function Stories() {
       id: 2,
       name: "Jordie Stokes",
       imgSrc: pngs.sophie,
-        text:"University Student",
+      text: "University Student",
       description:
         "I was nervous about driving, but the structured lessons and expert guidance gave me confidence. Now, I feel safe and in control on the road!",
     },
@@ -31,7 +30,7 @@ export default function Stories() {
       id: 3,
       name: "Monica Baldwin",
       imgSrc: pngs.james,
-        text:"University Student",
+      text: "University Student",
       description:
         "Pro Drive Academy made learning to drive so easy! My instructor was patient and supportive, and I passed my test on the first try. Highly recommend!",
     },
@@ -39,7 +38,7 @@ export default function Stories() {
       id: 3,
       name: "Jordie Stokes",
       imgSrc: pngs.sophie,
-        text:"University Student",
+      text: "University Student",
       description:
         "I was nervous about driving, but the structured lessons and expert guidance gave me confidence. Now, I feel safe and in control on the road!",
     },
@@ -52,15 +51,14 @@ export default function Stories() {
     slidesToScroll: 2,
 
     responsive: [
-       {
+      {
         breakpoint: 600, // For mobile devices
         settings: {
-          slidesToShow:1, // Show 1 slide at a time
+          slidesToShow: 1, // Show 1 slide at a time
           slidesToScroll: 1, // Scroll 1 slide at a time
-         rows:2,
-        // vertical: true, // makes slider vertical
-        verticalSwiping: true, 
-        
+          rows: 2,
+          // vertical: true, // makes slider vertical
+          verticalSwiping: true,
         },
       },
     ],
@@ -95,7 +93,7 @@ export default function Stories() {
               flexWrap: { xs: "wrap", lg: "nowrap" },
               flexDirection: "row",
               justifyContent: { xs: "center", lg: "space-between" },
-              alignItems: { xs:  "center", lg: "start" },
+              alignItems: { xs: "center", lg: "start" },
               gap: { xs: 4, sm: 6, md: 3 },
             }}
           >
@@ -127,7 +125,6 @@ export default function Stories() {
               </Typography>
               <Typography
                 sx={{
-
                   width: "100%",
                   fontWeight: "400",
                   fontSize: localFontSize.p2,
@@ -138,7 +135,8 @@ export default function Stories() {
                   color: "#19222780",
                 }}
               >
-                Hear from our students who mastered the road with Pro Drive Academy. Real stories, real success – your journey starts here!
+                Hear from our students who mastered the road with Pro Drive
+                Academy. Real stories, real success – your journey starts here!
               </Typography>
             </Box>
 
@@ -150,7 +148,6 @@ export default function Stories() {
                 display: "flex",
                 flexWrap: { xs: "wrap", lg: "nowrap" },
                 justifyContent: {
-
                   xs: "space-between",
                 },
                 alignItems: "start",
@@ -180,70 +177,72 @@ export default function Stories() {
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "start",
-                          textAlign:"left"
+                          textAlign: "left",
                         }}
                       >
-
                         <Box>
-                                            <Box
-                                              sx={{
-                                                background: "rgba(25,34,39,1)",
-                                                maxWidth: { xs: "600px", xl: "745px" },
-                                                width: "100%",
-                                                borderRadius: "22px",
-                                                padding: "30px",
-                                              }}
-                                            >
-                                              <Box
-                                                sx={{
-                                                  display: "flex",
-                                                  alignItems: "center",
-                                                  gap: "10px",
-                                                }}
-                                              >
-                                                <Image src={data.imgSrc} alt={data.name} height={49} width={49} />
-                                                <Box>
-                                                  <Typography
-                                                    sx={{
-                                                      fontWeight: "600",
-                                                      fontSize: localFontSize.p1,
-                                                      color: "#fff",
-                                                    }}
-                                                  >
-                                                    {data.name}
-                                                  </Typography>
-                                                  <Box
-                                                    sx={{
-                                                      display: "flex",
-                                                      alignItems: "center",
-                                                    }}
-                                              >
-                                                    <Typography
-                                                    sx={{
-                                                      fontWeight: "400",
-                                                      fontSize:"11px",
-                                                      color: "#fff",
-                                                    }}
-                                                  >
-                                                    {data.text}
-                                                  </Typography>
-
-                                                  </Box>
-                                                </Box>
-                                              </Box>
-                                              <Typography
-                                                sx={{
-                                                  fontWeight: "400",
-                                                  fontSize: localFontSize.p1,
-                                                  color: "rgba(255,255,255,0.5)",
-                                                  marginTop: "15px",
-                                                }}
-                                              >     
-                                                {data.description}
-                                              </Typography>
-                                            </Box>
-                                          </Box>
-                       
+                          <Box
+                            sx={{
+                              background: "rgba(25,34,39,1)",
+                              maxWidth: { xs: "600px", xl: "745px" },
+                              width: "100%",
+                              borderRadius: "22px",
+                              padding: "30px",
+                            }}
+                          >
+                            <Box
+                              sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "10px",
+                              }}
+                            >
+                              <Image
+                                src={data.imgSrc}
+                                alt={data.name}
+                                height={49}
+                                width={49}
+                              />
+                              <Box>
+                                <Typography
+                                  sx={{
+                                    fontWeight: "600",
+                                    fontSize: localFontSize.p1,
+                                    color: "#fff",
+                                  }}
+                                >
+                                  {data.name}
+                                </Typography>
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <Typography
+                                    sx={{
+                                      fontWeight: "400",
+                                      fontSize: "11px",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    {data.text}
+                                  </Typography>
+                                </Box>
+                              </Box>
+                            </Box>
+                            <Typography
+                              sx={{
+                                fontWeight: "400",
+                                fontSize: localFontSize.p1,
+                                color: "rgba(255,255,255,0.5)",
+                                marginTop: "15px",
+                              }}
+                            >
+                              {data.description}
+                            </Typography>
+                          </Box>
+                        </Box>
                       </Box>
                     </Box>
                   ))}
